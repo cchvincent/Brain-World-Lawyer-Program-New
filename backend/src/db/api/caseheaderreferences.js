@@ -1,3 +1,4 @@
+
 const db = require('../models');
 const FileDBApi = require('./file');
 const crypto = require('crypto');
@@ -7,56 +8,177 @@ const Sequelize = db.Sequelize;
 const Op = Sequelize.Op;
 
 module.exports = class CaseheaderreferencesDBApi {
+
   static async create(data, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
-    const transaction = (options && options.transaction) || undefined;
+  const currentUser = (options && options.currentUser) || { id: null };
+  const transaction = (options && options.transaction) || undefined;
 
-    const caseheaderreferences = await db.caseheaderreferences.create(
-      {
-        id: data.id || undefined,
+  const caseheaderreferences = await db.caseheaderreferences.create(
+  {
+  id: data.id || undefined,
 
-        refno: data.refno || null,
-        relatedcases: data.relatedcases || null,
-        dateofaccident: data.dateofaccident || null,
-        timebar: data.timebar || null,
-        caseprogressid: data.caseprogressid || null,
-        clientid: data.clientid || null,
-        casefilelocationid: data.casefilelocationid || null,
-        casetypesid: data.casetypesid || null,
-        introducers: data.introducers || null,
-        yearofcreation: data.yearofcreation || null,
-        caseno: data.caseno || null,
-        handlers: data.handlers || null,
-        supervisors: data.supervisors || null,
-        staffs: data.staffs || null,
-        dla: data.dla || null,
-        conflictcheck: data.conflictcheck || null,
-        clientcheck: data.clientcheck || null,
-        moneylaundrycompliance: data.moneylaundrycompliance || null,
-        temprefno: data.temprefno || null,
-        status: data.status || null,
-        caseprogress: data.caseprogress || null,
-        workaccident: data.workaccident || null,
-        liabilityadmitted: data.liabilityadmitted || null,
-        remarks: data.remarks || null,
-        followuptasks: data.followuptasks || null,
-        approvalstatus: data.approvalstatus || null,
-        createdate: data.createdate || null,
-        createby: data.createby || null,
-        updatedate: data.updatedate || null,
-        updateby: data.updateby || null,
-        importHash: data.importHash || null,
-        createdById: currentUser.id,
-        updatedById: currentUser.id,
-      },
-      { transaction },
-    );
+    refno: data.refno
+    ||
+    null
+,
 
-    return caseheaderreferences;
+    relatedcases: data.relatedcases
+    ||
+    null
+,
+
+    dateofaccident: data.dateofaccident
+    ||
+    null
+,
+
+    timebar: data.timebar
+    ||
+    null
+,
+
+    caseprogressid: data.caseprogressid
+    ||
+    null
+,
+
+    clientid: data.clientid
+    ||
+    null
+,
+
+    casefilelocationid: data.casefilelocationid
+    ||
+    null
+,
+
+    casetypesid: data.casetypesid
+    ||
+    null
+,
+
+    introducers: data.introducers
+    ||
+    null
+,
+
+    yearofcreation: data.yearofcreation
+    ||
+    null
+,
+
+    caseno: data.caseno
+    ||
+    null
+,
+
+    handlers: data.handlers
+    ||
+    null
+,
+
+    supervisors: data.supervisors
+    ||
+    null
+,
+
+    staffs: data.staffs
+    ||
+    null
+,
+
+    dla: data.dla
+    ||
+    null
+,
+
+    conflictcheck: data.conflictcheck
+    ||
+    null
+,
+
+    clientcheck: data.clientcheck
+    ||
+    null
+,
+
+    moneylaundrycompliance: data.moneylaundrycompliance
+    ||
+    null
+,
+
+    temprefno: data.temprefno
+    ||
+    null
+,
+
+    status: data.status
+    ||
+    null
+,
+
+    caseprogress: data.caseprogress
+    ||
+    null
+,
+
+    workaccident: data.workaccident
+    ||
+    null
+,
+
+    liabilityadmitted: data.liabilityadmitted
+    ||
+    null
+,
+
+    remarks: data.remarks
+    ||
+    null
+,
+
+    followuptasks: data.followuptasks
+    ||
+    null
+,
+
+    approvalstatus: data.approvalstatus
+    ||
+    null
+,
+
+    createdate: data.createdate
+    ||
+    null
+,
+
+    createby: data.createby
+    ||
+    null
+,
+
+    updatedate: data.updatedate
+    ||
+    null
+,
+
+    updateby: data.updateby
+    ||
+    null
+,
+
+  importHash: data.importHash || null,
+  createdById: currentUser.id,
+  updatedById: currentUser.id,
+  },
+  { transaction },
+  );
+
+  return caseheaderreferences;
   }
 
   static async update(id, data, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
+    const currentUser = (options && options.currentUser) || {id: null};
     const transaction = (options && options.transaction) || undefined;
 
     const caseheaderreferences = await db.caseheaderreferences.findByPk(id, {
@@ -65,64 +187,179 @@ module.exports = class CaseheaderreferencesDBApi {
 
     await caseheaderreferences.update(
       {
-        refno: data.refno || null,
-        relatedcases: data.relatedcases || null,
-        dateofaccident: data.dateofaccident || null,
-        timebar: data.timebar || null,
-        caseprogressid: data.caseprogressid || null,
-        clientid: data.clientid || null,
-        casefilelocationid: data.casefilelocationid || null,
-        casetypesid: data.casetypesid || null,
-        introducers: data.introducers || null,
-        yearofcreation: data.yearofcreation || null,
-        caseno: data.caseno || null,
-        handlers: data.handlers || null,
-        supervisors: data.supervisors || null,
-        staffs: data.staffs || null,
-        dla: data.dla || null,
-        conflictcheck: data.conflictcheck || null,
-        clientcheck: data.clientcheck || null,
-        moneylaundrycompliance: data.moneylaundrycompliance || null,
-        temprefno: data.temprefno || null,
-        status: data.status || null,
-        caseprogress: data.caseprogress || null,
-        workaccident: data.workaccident || null,
-        liabilityadmitted: data.liabilityadmitted || null,
-        remarks: data.remarks || null,
-        followuptasks: data.followuptasks || null,
-        approvalstatus: data.approvalstatus || null,
-        createdate: data.createdate || null,
-        createby: data.createby || null,
-        updatedate: data.updatedate || null,
-        updateby: data.updateby || null,
+
+        refno: data.refno
+        ||
+        null
+,
+
+        relatedcases: data.relatedcases
+        ||
+        null
+,
+
+        dateofaccident: data.dateofaccident
+        ||
+        null
+,
+
+        timebar: data.timebar
+        ||
+        null
+,
+
+        caseprogressid: data.caseprogressid
+        ||
+        null
+,
+
+        clientid: data.clientid
+        ||
+        null
+,
+
+        casefilelocationid: data.casefilelocationid
+        ||
+        null
+,
+
+        casetypesid: data.casetypesid
+        ||
+        null
+,
+
+        introducers: data.introducers
+        ||
+        null
+,
+
+        yearofcreation: data.yearofcreation
+        ||
+        null
+,
+
+        caseno: data.caseno
+        ||
+        null
+,
+
+        handlers: data.handlers
+        ||
+        null
+,
+
+        supervisors: data.supervisors
+        ||
+        null
+,
+
+        staffs: data.staffs
+        ||
+        null
+,
+
+        dla: data.dla
+        ||
+        null
+,
+
+        conflictcheck: data.conflictcheck
+        ||
+        null
+,
+
+        clientcheck: data.clientcheck
+        ||
+        null
+,
+
+        moneylaundrycompliance: data.moneylaundrycompliance
+        ||
+        null
+,
+
+        temprefno: data.temprefno
+        ||
+        null
+,
+
+        status: data.status
+        ||
+        null
+,
+
+        caseprogress: data.caseprogress
+        ||
+        null
+,
+
+        workaccident: data.workaccident
+        ||
+        null
+,
+
+        liabilityadmitted: data.liabilityadmitted
+        ||
+        null
+,
+
+        remarks: data.remarks
+        ||
+        null
+,
+
+        followuptasks: data.followuptasks
+        ||
+        null
+,
+
+        approvalstatus: data.approvalstatus
+        ||
+        null
+,
+
+        createdate: data.createdate
+        ||
+        null
+,
+
+        createby: data.createby
+        ||
+        null
+,
+
+        updatedate: data.updatedate
+        ||
+        null
+,
+
+        updateby: data.updateby
+        ||
+        null
+,
+
         updatedById: currentUser.id,
       },
-      { transaction },
+      {transaction},
     );
 
     return caseheaderreferences;
   }
 
   static async remove(id, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
+    const currentUser = (options && options.currentUser) || {id: null};
     const transaction = (options && options.transaction) || undefined;
 
-    const caseheaderreferences = await db.caseheaderreferences.findByPk(
-      id,
-      options,
-    );
+    const caseheaderreferences = await db.caseheaderreferences.findByPk(id, options);
 
-    await caseheaderreferences.update(
-      {
-        deletedBy: currentUser.id,
-      },
-      {
-        transaction,
-      },
-    );
+    await caseheaderreferences.update({
+      deletedBy: currentUser.id
+    }, {
+      transaction,
+    });
 
     await caseheaderreferences.destroy({
-      transaction,
+      transaction
     });
 
     return caseheaderreferences;
@@ -140,7 +377,7 @@ module.exports = class CaseheaderreferencesDBApi {
       return caseheaderreferences;
     }
 
-    const output = caseheaderreferences.get({ plain: true });
+    const output = caseheaderreferences.get({plain: true});
 
     return output;
   }
@@ -149,14 +386,16 @@ module.exports = class CaseheaderreferencesDBApi {
     var limit = filter.limit || 0;
     var offset = 0;
     if (filter.page != 1 && filter.page) {
-      const currentPage = +filter.page - 1;
-      offset = currentPage * limit;
+    const currentPage = +filter.page - 1;
+    offset = currentPage * limit;
     }
     var orderBy = null;
 
     const transaction = (options && options.transaction) || undefined;
     let where = {};
-    let include = [];
+    let include = [
+
+    ];
 
     if (filter) {
       if (filter.id) {
@@ -169,7 +408,11 @@ module.exports = class CaseheaderreferencesDBApi {
       if (filter.refno) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('caseheaderreferences', 'refno', filter.refno),
+          [Op.and]: Utils.ilike(
+            'caseheaderreferences',
+            'refno',
+            filter.refno,
+          ),
         };
       }
 
@@ -264,7 +507,11 @@ module.exports = class CaseheaderreferencesDBApi {
       if (filter.dla) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('caseheaderreferences', 'dla', filter.dla),
+          [Op.and]: Utils.ilike(
+            'caseheaderreferences',
+            'dla',
+            filter.dla,
+          ),
         };
       }
 
@@ -665,7 +912,9 @@ module.exports = class CaseheaderreferencesDBApi {
       ) {
         where = {
           ...where,
-          active: filter.active === true || filter.active === 'true',
+          active:
+            filter.active === true ||
+            filter.active === 'true',
         };
       }
 
@@ -694,19 +943,23 @@ module.exports = class CaseheaderreferencesDBApi {
       }
     }
 
-    let { rows, count } = await db.caseheaderreferences.findAndCountAll({
-      where,
-      include,
-      limit: limit ? Number(limit) : undefined,
-      offset: offset ? Number(offset) : undefined,
-      order: orderBy ? [orderBy.split('_')] : [['createdAt', 'DESC']],
-      transaction,
-    });
+    let { rows, count } = await db.caseheaderreferences.findAndCountAll(
+      {
+        where,
+        include,
+        limit: limit ? Number(limit) : undefined,
+        offset: offset ? Number(offset) : undefined,
+        order: orderBy
+          ? [orderBy.split('_')]
+          : [['createdAt', 'DESC']],
+        transaction,
+      },
+    );
 
-    //    rows = await this._fillWithRelationsAndFilesForRows(
-    //      rows,
-    //      options,
-    //    );
+//    rows = await this._fillWithRelationsAndFilesForRows(
+//      rows,
+//      options,
+//    );
 
     return { rows, count };
   }
@@ -718,13 +971,17 @@ module.exports = class CaseheaderreferencesDBApi {
       where = {
         [Op.or]: [
           { ['id']: Utils.uuid(query) },
-          Utils.ilike('caseheaderreferences', 'refno', query),
+          Utils.ilike(
+            'caseheaderreferences',
+            'refno',
+            query,
+          ),
         ],
       };
     }
 
     const records = await db.caseheaderreferences.findAll({
-      attributes: ['id', 'refno'],
+      attributes: [ 'id', 'refno' ],
       where,
       limit: limit ? Number(limit) : undefined,
       orderBy: [['refno', 'ASC']],
@@ -735,4 +992,6 @@ module.exports = class CaseheaderreferencesDBApi {
       label: record.refno,
     }));
   }
+
 };
+

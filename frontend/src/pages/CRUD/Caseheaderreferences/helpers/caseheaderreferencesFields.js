@@ -1,65 +1,127 @@
+
 const caseheaderreferencesFields = {
-  id: { type: 'id', label: 'ID' },
+	id: { type: 'id', label: 'ID' },
 
-  refno: { type: 'string', label: 'Ref No' },
+    refno: { type: 'string', label: 'Ref No',
 
-  relatedcases: { type: 'string', label: 'Related Cases' },
+    },
 
-  dateofaccident: { type: 'date', label: 'Date Of Accident' },
+    relatedcases: { type: 'string', label: 'Related Cases',
 
-  timebar: { type: 'string', label: 'Time Bar' },
+    },
 
-  caseprogressid: { type: 'int', label: 'Case Progress ID' },
+    dateofaccident: { type: 'date', label: 'Date Of Accident',
 
-  clientid: { type: 'int', label: 'Client ID' },
+    },
 
-  casefilelocationid: { type: 'int', label: 'File Location ID' },
+    timebar: { type: 'string', label: 'Time Bar',
 
-  casetypesid: { type: 'int', label: 'Case Types ID' },
+    },
 
-  introducers: { type: 'string', label: 'Introducers' },
+    caseprogressid: { type: 'int', label: 'Case Progress ID',
 
-  yearofcreation: { type: 'string', label: 'Year Of Creation' },
+    },
 
-  caseno: { type: 'string', label: 'Case No' },
+    clientid: { type: 'int', label: 'Client ID',
 
-  handlers: { type: 'string', label: 'Handlers' },
+    },
 
-  supervisors: { type: 'string', label: 'Supervisors' },
+    casefilelocationid: { type: 'int', label: 'File Location ID',
 
-  staffs: { type: 'string', label: 'Staffs' },
+    },
 
-  dla: { type: 'string', label: 'DLA' },
+    casetypesid: { type: 'int', label: 'Case Types ID',
 
-  conflictcheck: { type: 'int', label: 'Conflict Check' },
+    },
 
-  clientcheck: { type: 'int', label: 'Client Check' },
+    introducers: { type: 'string', label: 'Introducers',
 
-  moneylaundrycompliance: { type: 'string', label: 'Money Laundry Compliance' },
+    },
 
-  temprefno: { type: 'string', label: 'Temp Ref No' },
+    yearofcreation: { type: 'string', label: 'Year Of Creation',
 
-  status: { type: 'string', label: 'Status' },
+    },
 
-  caseprogress: { type: 'int', label: 'Progress' },
+    caseno: { type: 'string', label: 'Case No',
 
-  workaccident: { type: 'int', label: 'Work Accident' },
+    },
 
-  liabilityadmitted: { type: 'int', label: 'Liability Admitted' },
+    handlers: { type: 'string', label: 'Handlers',
 
-  remarks: { type: 'string', label: 'Remarks' },
+    },
 
-  followuptasks: { type: 'string', label: 'Follow Up Tasks' },
+    supervisors: { type: 'string', label: 'Supervisors',
 
-  approvalstatus: { type: 'int', label: 'Approval Status' },
+    },
 
-  createdate: { type: 'datetime', label: 'Create Date' },
+    staffs: { type: 'string', label: 'Staffs',
 
-  createby: { type: 'string', label: 'Create By' },
+    },
 
-  updatedate: { type: 'datetime', label: 'Update Date' },
+    dla: { type: 'string', label: 'DLA',
 
-  updateby: { type: 'string', label: 'Update By' },
-};
+    },
+
+    conflictcheck: { type: 'int', label: 'Conflict Check',
+
+    },
+
+    clientcheck: { type: 'int', label: 'Client Check',
+
+    },
+
+    moneylaundrycompliance: { type: 'string', label: 'Money Laundry Compliance',
+
+    },
+
+    temprefno: { type: 'string', label: 'Temp Ref No',
+
+    },
+
+    status: { type: 'string', label: 'Status',
+
+    },
+
+    caseprogress: { type: 'int', label: 'Progress',
+
+    },
+
+    workaccident: { type: 'int', label: 'Work Accident',
+
+    },
+
+    liabilityadmitted: { type: 'int', label: 'Liability Admitted',
+
+    },
+
+    remarks: { type: 'string', label: 'Remarks',
+
+    },
+
+    followuptasks: { type: 'string', label: 'Follow Up Tasks',
+
+    },
+
+    approvalstatus: { type: 'int', label: 'Approval Status',
+
+    },
+
+    createdate: { type: 'datetime', label: 'Create Date',
+
+    },
+
+    createby: { type: 'string', label: 'Create By',
+
+    },
+
+    updatedate: { type: 'datetime', label: 'Update Date',
+
+    },
+
+    updateby: { type: 'string', label: 'Update By',
+
+    },
+
+}
 
 export default caseheaderreferencesFields;

@@ -4,18 +4,22 @@ import actions from 'actions/category/categoryFormActions';
 import { connect } from 'react-redux';
 
 const CategoryViewPage = (props) => {
+
   const { dispatch, match, loading, record } = props;
 
   useEffect(() => {
-    dispatch(actions.doFind(match.params.id));
+    dispatch(actions.doFind(match.params.id))
   }, [match]);
 
   return (
     <React.Fragment>
-      <CategoryWidget loading={loading} record={record} />
+      <CategoryWidget
+      loading={loading}
+      record={record}
+      />
     </React.Fragment>
   );
-};
+}
 
 function mapStateToProps(store) {
   return {

@@ -4,18 +4,22 @@ import actions from 'actions/caseheaderreferences/caseheaderreferencesFormAction
 import { connect } from 'react-redux';
 
 const CaseheaderreferencesViewPage = (props) => {
+
   const { dispatch, match, loading, record } = props;
 
   useEffect(() => {
-    dispatch(actions.doFind(match.params.id));
+    dispatch(actions.doFind(match.params.id))
   }, [match]);
 
   return (
     <React.Fragment>
-      <CaseheaderreferencesWidget loading={loading} record={record} />
+      <CaseheaderreferencesWidget
+      loading={loading}
+      record={record}
+      />
     </React.Fragment>
   );
-};
+}
 
 function mapStateToProps(store) {
   return {

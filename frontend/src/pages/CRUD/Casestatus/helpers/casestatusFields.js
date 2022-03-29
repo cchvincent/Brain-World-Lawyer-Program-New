@@ -1,19 +1,35 @@
+
 const casestatusFields = {
-  id: { type: 'id', label: 'ID' },
+	id: { type: 'id', label: 'ID' },
 
-  desc_en: { type: 'string', label: 'Description (EN)' },
+    desc_en: { type: 'string', label: 'Description (EN)',
 
-  desc_ch: { type: 'string', label: 'Description (CH)' },
+    },
 
-  createdate: { type: 'datetime', label: 'Create Date' },
+    desc_ch: { type: 'string', label: 'Description (CH)',
 
-  createby: { type: 'string', label: 'Create By' },
+    },
 
-  updatedate: { type: 'datetime', label: 'Update Date' },
+    createdate: { type: 'datetime', label: 'Create Date',
 
-  updateby: { type: 'string', label: 'Update By' },
+    },
 
-  status: { type: 'string', label: 'Status' },
-};
+    createby: { type: 'string', label: 'Create By',
+
+    },
+
+    updatedate: { type: 'datetime', label: 'Update Date',
+
+    },
+
+    updateby: { type: 'string', label: 'Update By',
+
+    },
+
+    status: { type: 'string', label: 'Status',
+
+    },
+
+}
 
 export default casestatusFields;

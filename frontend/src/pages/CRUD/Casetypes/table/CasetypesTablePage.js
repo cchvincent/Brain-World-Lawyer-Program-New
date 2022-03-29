@@ -7,6 +7,6 @@ const CasetypesTablePage = () => {
       <CasetypesTable />
     </div>
   );
-};
+}
 
 export default CasetypesTablePage;

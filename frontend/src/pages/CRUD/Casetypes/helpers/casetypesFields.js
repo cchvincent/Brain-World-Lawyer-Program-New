@@ -1,21 +1,39 @@
+
 const casetypesFields = {
-  id: { type: 'id', label: 'ID' },
+	id: { type: 'id', label: 'ID' },
 
-  casetypes: { type: 'string', label: 'Case Types' },
+    casetypes: { type: 'string', label: 'Case Types',
 
-  desc_en: { type: 'string', label: 'Description (EN)' },
+    },
 
-  desc_ch: { type: 'string', label: 'Description (CH)' },
+    desc_en: { type: 'string', label: 'Description (EN)',
 
-  status: { type: 'string', label: 'Status' },
+    },
 
-  createdate: { type: 'datetime', label: 'Create Date' },
+    desc_ch: { type: 'string', label: 'Description (CH)',
 
-  createby: { type: 'string', label: 'Create By' },
+    },
 
-  updatedate: { type: 'datetime', label: 'Update Date' },
+    status: { type: 'string', label: 'Status',
 
-  updateby: { type: 'string', label: 'Update By' },
-};
+    },
+
+    createdate: { type: 'datetime', label: 'Create Date',
+
+    },
+
+    createby: { type: 'string', label: 'Create By',
+
+    },
+
+    updatedate: { type: 'datetime', label: 'Update Date',
+
+    },
+
+    updateby: { type: 'string', label: 'Update By',
+
+    },
+
+}
 
 export default casetypesFields;

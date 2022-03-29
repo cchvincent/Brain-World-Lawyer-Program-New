@@ -21,9 +21,7 @@ const CasestatusSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label
-        ? originalValue.label
-        : originalValue.desc_en;
+      let label = originalValue.label ? originalValue.label : originalValue.desc_en;
 
       return {
         key: value,
@@ -44,7 +42,10 @@ const CasestatusSelectItem = (props) => {
     },
   };
 
-  const { form, ...rest } = props;
+  const {
+    form,
+    ...rest
+  } = props;
 
   return (
     <React.Fragment>
@@ -56,10 +57,12 @@ const CasestatusSelectItem = (props) => {
       />
     </React.Fragment>
   );
-};
+}
 
 const select = (state) => ({
-  hasPermissionToCreate: state.casestatus.hasPermissionToCreate,
+  hasPermissionToCreate: state.casestatus.hasPermissionToCreate
 });
 
-export default connect(select)(CasestatusSelectItem);
+export default connect(select)(
+  CasestatusSelectItem,
+);

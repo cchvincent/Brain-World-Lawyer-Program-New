@@ -3,23 +3,24 @@ import axios from 'axios';
 
 async function list(filter) {
   const response = await axios.get(
-    `/casestatus?page=${filter.page}&limit=${filter.limit}&casestatus=${
-      filter.casestatus ? filter.casestatus : ''
-    }`,
+    `/casestatus?page=${filter.page}&limit=${filter.limit}&casestatus=${filter.casestatus ? filter.casestatus : ''}`,
   );
   return response.data;
 }
 
 async function filterCasestatus(request, filter) {
-  const response = await axios.get(
-    `/casestatus?page=${filter.page}&limit=${filter.limit}${request}`,
-  );
+  const response = await axios.get(`/casestatus?page=${filter.page}&limit=${filter.limit}${request}`);
   return response.data;
 }
 
 const actions = {
-  doFilter: (request, filter) => async (dispatch, getState) => {
+
+  doFilter: (request, filter) => async (
+    dispatch,
+    getState,
+  ) => {
     try {
+
       const response = await filterCasestatus(request, filter);
 
       dispatch({
@@ -32,36 +33,37 @@ const actions = {
       Errors.handle(error);
       dispatch({
         type: 'CASESTATUS_LIST_FETCH_ERROR',
-      });
+      })
     }
   },
 
-  doFetch:
-    (filter, keepPagination = false) =>
-    async (dispatch, getState) => {
-      try {
-        dispatch({
-          type: 'CASESTATUS_LIST_FETCH_STARTED',
-          payload: { filter, keepPagination },
-        });
+  doFetch: (filter, keepPagination = false) => async (
+    dispatch,
+    getState,
+  ) => {
+    try {
+      dispatch({
+        type: 'CASESTATUS_LIST_FETCH_STARTED',
+        payload: { filter, keepPagination },
+      });
 
-        const response = await list(filter);
+      const response = await list(filter);
 
-        dispatch({
-          type: 'CASESTATUS_LIST_FETCH_SUCCESS',
-          payload: {
-            rows: response.rows,
-            count: response.count,
-          },
-        });
-      } catch (error) {
-        Errors.handle(error);
+      dispatch({
+        type: 'CASESTATUS_LIST_FETCH_SUCCESS',
+        payload: {
+          rows: response.rows,
+          count: response.count,
+        },
+      });
+    } catch (error) {
+      Errors.handle(error);
 
-        dispatch({
-          type: 'CASESTATUS_LIST_FETCH_ERROR',
-        });
-      }
-    },
+      dispatch({
+        type: 'CASESTATUS_LIST_FETCH_ERROR',
+      });
+    }
+  },
 
   doDelete: (id) => async (dispatch) => {
     try {
@@ -69,7 +71,7 @@ const actions = {
         type: 'CASESTATUS_LIST_DELETE_STARTED',
       });
 
-      await axios.delete(`/casestatus/${id}`);
+      await axios.delete(`/casestatus/${id}`)
 
       dispatch({
         type: 'CASESTATUS_LIST_DELETE_SUCCESS',
@@ -83,6 +85,7 @@ const actions = {
           count: response.count,
         },
       });
+
     } catch (error) {
       Errors.handle(error);
 
@@ -92,18 +95,19 @@ const actions = {
     }
   },
   doOpenConfirm: (id) => async (dispatch) => {
-    dispatch({
-      type: 'CASESTATUS_LIST_OPEN_CONFIRM',
-      payload: {
-        id: id,
-      },
-    });
+      dispatch({
+        type: 'CASESTATUS_LIST_OPEN_CONFIRM',
+        payload: {
+          id: id
+        },
+      });
   },
   doCloseConfirm: () => async (dispatch) => {
-    dispatch({
-      type: 'CASESTATUS_LIST_CLOSE_CONFIRM',
-    });
+      dispatch({
+        type: 'CASESTATUS_LIST_CLOSE_CONFIRM',
+      });
   },
 };
+
 
 export default actions;

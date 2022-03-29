@@ -21,9 +21,7 @@ const CasetypesSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label
-        ? originalValue.label
-        : originalValue.casetypes;
+      let label = originalValue.label ? originalValue.label : originalValue.casetypes;
 
       return {
         key: value,
@@ -44,7 +42,10 @@ const CasetypesSelectItem = (props) => {
     },
   };
 
-  const { form, ...rest } = props;
+  const {
+    form,
+    ...rest
+  } = props;
 
   return (
     <React.Fragment>
@@ -56,10 +57,12 @@ const CasetypesSelectItem = (props) => {
       />
     </React.Fragment>
   );
-};
+}
 
 const select = (state) => ({
-  hasPermissionToCreate: state.casetypes.hasPermissionToCreate,
+  hasPermissionToCreate: state.casetypes.hasPermissionToCreate
 });
 
-export default connect(select)(CasetypesSelectItem);
+export default connect(select)(
+  CasetypesSelectItem,
+);

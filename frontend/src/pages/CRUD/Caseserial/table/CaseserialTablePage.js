@@ -7,6 +7,6 @@ const CaseserialTablePage = () => {
       <CaseserialTable />
     </div>
   );
-};
+}
 
 export default CaseserialTablePage;

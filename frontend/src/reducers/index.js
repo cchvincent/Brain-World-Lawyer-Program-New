@@ -1,3 +1,4 @@
+
 import auth from 'reducers/auth';
 import alerts from 'reducers/auth';
 import navigation from 'reducers/navigation';
@@ -36,4 +37,6 @@ export default (history) =>
     users,
 
     caseheaderreferences,
+
   });
+

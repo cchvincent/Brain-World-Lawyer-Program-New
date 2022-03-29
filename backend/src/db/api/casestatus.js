@@ -1,3 +1,4 @@
+
 const db = require('../models');
 const FileDBApi = require('./file');
 const crypto = require('crypto');
@@ -7,33 +8,62 @@ const Sequelize = db.Sequelize;
 const Op = Sequelize.Op;
 
 module.exports = class CasestatusDBApi {
+
   static async create(data, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
-    const transaction = (options && options.transaction) || undefined;
+  const currentUser = (options && options.currentUser) || { id: null };
+  const transaction = (options && options.transaction) || undefined;
 
-    const casestatus = await db.casestatus.create(
-      {
-        id: data.id || undefined,
+  const casestatus = await db.casestatus.create(
+  {
+  id: data.id || undefined,
 
-        desc_en: data.desc_en || null,
-        desc_ch: data.desc_ch || null,
-        createdate: data.createdate || null,
-        createby: data.createby || null,
-        updatedate: data.updatedate || null,
-        updateby: data.updateby || null,
-        status: data.status || null,
-        importHash: data.importHash || null,
-        createdById: currentUser.id,
-        updatedById: currentUser.id,
-      },
-      { transaction },
-    );
+    desc_en: data.desc_en
+    ||
+    null
+,
 
-    return casestatus;
+    desc_ch: data.desc_ch
+    ||
+    null
+,
+
+    createdate: data.createdate
+    ||
+    null
+,
+
+    createby: data.createby
+    ||
+    null
+,
+
+    updatedate: data.updatedate
+    ||
+    null
+,
+
+    updateby: data.updateby
+    ||
+    null
+,
+
+    status: data.status
+    ||
+    null
+,
+
+  importHash: data.importHash || null,
+  createdById: currentUser.id,
+  updatedById: currentUser.id,
+  },
+  { transaction },
+  );
+
+  return casestatus;
   }
 
   static async update(id, data, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
+    const currentUser = (options && options.currentUser) || {id: null};
     const transaction = (options && options.transaction) || undefined;
 
     const casestatus = await db.casestatus.findByPk(id, {
@@ -42,38 +72,64 @@ module.exports = class CasestatusDBApi {
 
     await casestatus.update(
       {
-        desc_en: data.desc_en || null,
-        desc_ch: data.desc_ch || null,
-        createdate: data.createdate || null,
-        createby: data.createby || null,
-        updatedate: data.updatedate || null,
-        updateby: data.updateby || null,
-        status: data.status || null,
+
+        desc_en: data.desc_en
+        ||
+        null
+,
+
+        desc_ch: data.desc_ch
+        ||
+        null
+,
+
+        createdate: data.createdate
+        ||
+        null
+,
+
+        createby: data.createby
+        ||
+        null
+,
+
+        updatedate: data.updatedate
+        ||
+        null
+,
+
+        updateby: data.updateby
+        ||
+        null
+,
+
+        status: data.status
+        ||
+        null
+,
+
         updatedById: currentUser.id,
       },
-      { transaction },
+      {transaction},
     );
 
     return casestatus;
   }
 
   static async remove(id, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
+    const currentUser = (options && options.currentUser) || {id: null};
     const transaction = (options && options.transaction) || undefined;
 
     const casestatus = await db.casestatus.findByPk(id, options);
 
-    await casestatus.update(
-      {
-        deletedBy: currentUser.id,
-      },
-      {
-        transaction,
-      },
-    );
+    await casestatus.update({
+      deletedBy: currentUser.id
+    }, {
+      transaction,
+    });
 
     await casestatus.destroy({
-      transaction,
+      transaction
     });
 
     return casestatus;
@@ -82,13 +138,16 @@ module.exports = class CasestatusDBApi {
   static async findBy(where, options) {
     const transaction = (options && options.transaction) || undefined;
 
-    const casestatus = await db.casestatus.findOne({ where }, { transaction });
+    const casestatus = await db.casestatus.findOne(
+      { where },
+      { transaction },
+    );
 
     if (!casestatus) {
       return casestatus;
     }
 
-    const output = casestatus.get({ plain: true });
+    const output = casestatus.get({plain: true});
 
     return output;
   }
@@ -97,14 +156,16 @@ module.exports = class CasestatusDBApi {
     var limit = filter.limit || 0;
     var offset = 0;
     if (filter.page != 1 && filter.page) {
-      const currentPage = +filter.page - 1;
-      offset = currentPage * limit;
+    const currentPage = +filter.page - 1;
+    offset = currentPage * limit;
     }
     var orderBy = null;
 
     const transaction = (options && options.transaction) || undefined;
     let where = {};
-    let include = [];
+    let include = [
+
+    ];
 
     if (filter) {
       if (filter.id) {
@@ -117,35 +178,55 @@ module.exports = class CasestatusDBApi {
       if (filter.desc_en) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casestatus', 'desc_en', filter.desc_en),
+          [Op.and]: Utils.ilike(
+            'casestatus',
+            'desc_en',
+            filter.desc_en,
+          ),
         };
       }
 
       if (filter.desc_ch) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casestatus', 'desc_ch', filter.desc_ch),
+          [Op.and]: Utils.ilike(
+            'casestatus',
+            'desc_ch',
+            filter.desc_ch,
+          ),
         };
       }
 
       if (filter.createby) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casestatus', 'createby', filter.createby),
+          [Op.and]: Utils.ilike(
+            'casestatus',
+            'createby',
+            filter.createby,
+          ),
         };
       }
 
       if (filter.updateby) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casestatus', 'updateby', filter.updateby),
+          [Op.and]: Utils.ilike(
+            'casestatus',
+            'updateby',
+            filter.updateby,
+          ),
         };
       }
 
       if (filter.status) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casestatus', 'status', filter.status),
+          [Op.and]: Utils.ilike(
+            'casestatus',
+            'status',
+            filter.status,
+          ),
         };
       }
 
@@ -205,7 +286,9 @@ module.exports = class CasestatusDBApi {
       ) {
         where = {
           ...where,
-          active: filter.active === true || filter.active === 'true',
+          active:
+            filter.active === true ||
+            filter.active === 'true',
         };
       }
 
@@ -234,19 +317,23 @@ module.exports = class CasestatusDBApi {
       }
     }
 
-    let { rows, count } = await db.casestatus.findAndCountAll({
-      where,
-      include,
-      limit: limit ? Number(limit) : undefined,
-      offset: offset ? Number(offset) : undefined,
-      order: orderBy ? [orderBy.split('_')] : [['createdAt', 'DESC']],
-      transaction,
-    });
+    let { rows, count } = await db.casestatus.findAndCountAll(
+      {
+        where,
+        include,
+        limit: limit ? Number(limit) : undefined,
+        offset: offset ? Number(offset) : undefined,
+        order: orderBy
+          ? [orderBy.split('_')]
+          : [['createdAt', 'DESC']],
+        transaction,
+      },
+    );
 
-    //    rows = await this._fillWithRelationsAndFilesForRows(
-    //      rows,
-    //      options,
-    //    );
+//    rows = await this._fillWithRelationsAndFilesForRows(
+//      rows,
+//      options,
+//    );
 
     return { rows, count };
   }
@@ -258,13 +345,17 @@ module.exports = class CasestatusDBApi {
       where = {
         [Op.or]: [
           { ['id']: Utils.uuid(query) },
-          Utils.ilike('casestatus', 'desc_en', query),
+          Utils.ilike(
+            'casestatus',
+            'desc_en',
+            query,
+          ),
         ],
       };
     }
 
     const records = await db.casestatus.findAll({
-      attributes: ['id', 'desc_en'],
+      attributes: [ 'id', 'desc_en' ],
       where,
       limit: limit ? Number(limit) : undefined,
       orderBy: [['desc_en', 'ASC']],
@@ -275,4 +366,6 @@ module.exports = class CasestatusDBApi {
       label: record.desc_en,
     }));
   }
+
 };
+

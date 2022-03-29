@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 
 async function selectList(query, limit) {
   const params = { query, limit };
-  const response = await axios.get(`/caseheaderreferences/autocomplete`, {
-    params,
-  });
+  const response = await axios.get(`/caseheaderreferences/autocomplete`, { params });
   return response.data;
 }
 
@@ -23,9 +21,7 @@ const CaseheaderreferencesSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label
-        ? originalValue.label
-        : originalValue.refno;
+      let label = originalValue.label ? originalValue.label : originalValue.refno;
 
       return {
         key: value,
@@ -46,7 +42,10 @@ const CaseheaderreferencesSelectItem = (props) => {
     },
   };
 
-  const { form, ...rest } = props;
+  const {
+    form,
+    ...rest
+  } = props;
 
   return (
     <React.Fragment>
@@ -58,10 +57,12 @@ const CaseheaderreferencesSelectItem = (props) => {
       />
     </React.Fragment>
   );
-};
+}
 
 const select = (state) => ({
-  hasPermissionToCreate: state.caseheaderreferences.hasPermissionToCreate,
+  hasPermissionToCreate: state.caseheaderreferences.hasPermissionToCreate
 });
 
-export default connect(select)(CaseheaderreferencesSelectItem);
+export default connect(select)(
+  CaseheaderreferencesSelectItem,
+);

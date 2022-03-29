@@ -28,110 +28,139 @@ import FormValidations from 'components/FormItems/formValidations';
 import Widget from 'components/Widget';
 
 const CategoryForm = (props) => {
+
   const {
-    isEditing,
-    isProfile,
-    findLoading,
-    saveLoading,
-    record,
-    onSubmit,
-    onCancel,
-    modal,
+  isEditing,
+  isProfile,
+  findLoading,
+  saveLoading,
+  record,
+  onSubmit,
+  onCancel,
+  modal
   } = props;
 
   const iniValues = () => {
-    return IniValues(categoryFields, record || {});
-  };
+  return IniValues(categoryFields, record || {});
+  }
 
   const formValidations = () => {
-    return FormValidations(categoryFields, record || {});
-  };
+  return FormValidations(categoryFields, record || {});
+  }
 
   const handleSubmit = (values) => {
-    const { id, ...data } = PreparedValues(categoryFields, values || {});
-    onSubmit(id, data);
+  const { id, ...data } = PreparedValues(categoryFields, values || {});
+  onSubmit(id, data);
   };
 
   const title = () => {
-    if (isProfile) {
-      return 'Edit My Profile';
-    }
+  if(isProfile) {
+  return 'Edit My Profile';
+  }
 
-    return isEditing ? 'Edit Category' : 'Add Category';
+  return isEditing
+  ? 'Edit Category'
+  : 'Add Category';
   };
 
   const renderForm = () => (
-    <Widget title={<h4>{title()}</h4>} collapse close>
-      <Formik
-        onSubmit={handleSubmit}
-        initialValues={iniValues()}
-        validationSchema={formValidations()}
-      >
-        {(form) => (
-          <form onSubmit={form.handleSubmit}>
-            <InputFormItem name={'desc_en'} schema={categoryFields} autoFocus />
+  <Widget title={<h4>{title()}</h4>} collapse close>
+  <Formik
+          onSubmit={handleSubmit}
+  initialValues={iniValues()}
+  validationSchema={formValidations()}
+  >
+  {(form) => (
+  <form onSubmit={form.handleSubmit}>
 
-            <InputFormItem name={'desc_ch'} schema={categoryFields} />
+      <InputFormItem
+              name={'desc_en'}
+      schema={categoryFields}
 
-            <InputFormItem name={'status'} schema={categoryFields} />
+        autoFocus
 
-            <DatePickerFormItem
+      />
+
+      <InputFormItem
+              name={'desc_ch'}
+      schema={categoryFields}
+
+      />
+
+      <InputFormItem
+              name={'status'}
+      schema={categoryFields}
+
+      />
+
+      <DatePickerFormItem
               name={'createdate'}
-              schema={categoryFields}
-              showTimeInput
-            />
+      schema={categoryFields}
+      showTimeInput
+      />
 
-            <InputFormItem name={'createby'} schema={categoryFields} />
+      <InputFormItem
+              name={'createby'}
+      schema={categoryFields}
 
-            <DatePickerFormItem
+      />
+
+      <DatePickerFormItem
               name={'updatedate'}
-              schema={categoryFields}
-              showTimeInput
-            />
+      schema={categoryFields}
+      showTimeInput
+      />
 
-            <InputFormItem name={'updateby'} schema={categoryFields} />
+      <InputFormItem
+              name={'updateby'}
+      schema={categoryFields}
 
-            <div className='form-buttons'>
-              <button
-                className='btn btn-primary'
-                disabled={saveLoading}
-                type='button'
-                onClick={form.handleSubmit}
-              >
-                Save
-              </button>{' '}
-              <button
-                className='btn btn-light'
-                type='button'
-                disabled={saveLoading}
-                onClick={form.handleReset}
-              >
-                Reset
-              </button>{' '}
-              <button
-                className='btn btn-light'
-                type='button'
-                disabled={saveLoading}
-                onClick={() => onCancel()}
-              >
-                Cancel
-              </button>
-            </div>
-          </form>
-        )}
-      </Formik>
-    </Widget>
-  );
+      />
 
-  if (findLoading) {
-    return <Loader />;
-  }
+  <div className="form-buttons">
+    <button
+            className="btn btn-primary"
+            disabled={saveLoading}
+    type="button"
+    onClick={form.handleSubmit}
+    >
+    Save
+  </button>{' '}{' '}
 
-  if (isEditing && !record) {
-    return <Loader />;
-  }
+  <button
+          className="btn btn-light"
+          type="button"
+          disabled={saveLoading}
+  onClick={form.handleReset}
+  >
+  Reset
+</button>{' '}{' '}
 
-  return renderForm();
-};
+  <button
+          className="btn btn-light"
+          type="button"
+          disabled={saveLoading}
+  onClick={() => onCancel()}
+  >
+  Cancel
+</button>
+        </div>
+        </form>
+        )
+        }
+        </Formik>
+        </Widget>
+        );
+
+        if (findLoading) {
+        return <Loader />;
+        }
+
+        if (isEditing && !record) {
+        return <Loader />;
+        }
+
+        return renderForm();
+        }
 
 export default CategoryForm;

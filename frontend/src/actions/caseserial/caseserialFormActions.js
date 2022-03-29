@@ -17,14 +17,14 @@ const actions = {
         type: 'CASESERIAL_FORM_FIND_STARTED',
       });
 
-      axios.get(`/caseserial/${id}`).then((res) => {
+      axios.get(`/caseserial/${id}`).then(res => {
         const record = res.data;
 
         dispatch({
           type: 'CASESERIAL_FORM_FIND_SUCCESS',
           payload: record,
         });
-      });
+      })
     } catch (error) {
       Errors.handle(error);
 
@@ -42,14 +42,14 @@ const actions = {
         type: 'CASESERIAL_FORM_CREATE_STARTED',
       });
 
-      axios.post('/caseserial', { data: values }).then((res) => {
+      axios.post('/caseserial', { data: values }).then(res => {
         dispatch({
           type: 'CASESERIAL_FORM_CREATE_SUCCESS',
         });
 
         toast.success('Caseserial created');
         dispatch(push('/admin/caseserial'));
-      });
+      })
     } catch (error) {
       Errors.handle(error);
 
@@ -59,13 +59,16 @@ const actions = {
     }
   },
 
-  doUpdate: (id, values, isProfile) => async (dispatch, getState) => {
+  doUpdate: (id, values, isProfile) => async (
+    dispatch,
+    getState,
+  ) => {
     try {
       dispatch({
         type: 'CASESERIAL_FORM_UPDATE_STARTED',
       });
 
-      await axios.put(`/caseserial/${id}`, { id, data: values });
+      await axios.put(`/caseserial/${id}`, {id, data: values});
 
       dispatch(doInit());
 

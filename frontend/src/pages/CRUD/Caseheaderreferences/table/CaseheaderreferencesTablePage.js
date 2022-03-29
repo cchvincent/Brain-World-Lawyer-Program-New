@@ -7,6 +7,6 @@ const CaseheaderreferencesTablePage = () => {
       <CaseheaderreferencesTable />
     </div>
   );
-};
+}
 
 export default CaseheaderreferencesTablePage;

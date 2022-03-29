@@ -21,9 +21,7 @@ const CaseserialSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label
-        ? originalValue.label
-        : originalValue.serialcode;
+      let label = originalValue.label ? originalValue.label : originalValue.serialcode;
 
       return {
         key: value,
@@ -44,7 +42,10 @@ const CaseserialSelectItem = (props) => {
     },
   };
 
-  const { form, ...rest } = props;
+  const {
+    form,
+    ...rest
+  } = props;
 
   return (
     <React.Fragment>
@@ -56,10 +57,12 @@ const CaseserialSelectItem = (props) => {
       />
     </React.Fragment>
   );
-};
+}
 
 const select = (state) => ({
-  hasPermissionToCreate: state.caseserial.hasPermissionToCreate,
+  hasPermissionToCreate: state.caseserial.hasPermissionToCreate
 });
 
-export default connect(select)(CaseserialSelectItem);
+export default connect(select)(
+  CaseserialSelectItem,
+);

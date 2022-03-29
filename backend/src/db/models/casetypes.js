@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 const moment = require('moment');
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const casetypes = sequelize.define(
     'casetypes',
     {
@@ -14,36 +14,44 @@ module.exports = function (sequelize, DataTypes) {
         primaryKey: true,
       },
 
-      casetypes: {
+casetypes: {
         type: DataTypes.TEXT,
+
       },
 
-      desc_en: {
+desc_en: {
         type: DataTypes.TEXT,
+
       },
 
-      desc_ch: {
+desc_ch: {
         type: DataTypes.TEXT,
+
       },
 
-      status: {
+status: {
         type: DataTypes.TEXT,
+
       },
 
-      createdate: {
+createdate: {
         type: DataTypes.DATE,
+
       },
 
-      createby: {
+createby: {
         type: DataTypes.TEXT,
+
       },
 
-      updatedate: {
+updatedate: {
         type: DataTypes.DATE,
+
       },
 
-      updateby: {
+updateby: {
         type: DataTypes.TEXT,
+
       },
 
       importHash: {
@@ -60,6 +68,7 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   casetypes.associate = (db) => {
+
     db.casetypes.belongsTo(db.users, {
       as: 'createdBy',
     });
@@ -71,3 +80,4 @@ module.exports = function (sequelize, DataTypes) {
 
   return casetypes;
 };
+

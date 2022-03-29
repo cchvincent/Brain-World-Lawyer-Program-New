@@ -4,18 +4,22 @@ import actions from 'actions/casestatus/casestatusFormActions';
 import { connect } from 'react-redux';
 
 const CasestatusViewPage = (props) => {
+
   const { dispatch, match, loading, record } = props;
 
   useEffect(() => {
-    dispatch(actions.doFind(match.params.id));
+    dispatch(actions.doFind(match.params.id))
   }, [match]);
 
   return (
     <React.Fragment>
-      <CasestatusWidget loading={loading} record={record} />
+      <CasestatusWidget
+      loading={loading}
+      record={record}
+      />
     </React.Fragment>
   );
-};
+}
 
 function mapStateToProps(store) {
   return {

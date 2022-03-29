@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 const moment = require('moment');
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const caseheaderreferences = sequelize.define(
     'caseheaderreferences',
     {
@@ -14,132 +14,162 @@ module.exports = function (sequelize, DataTypes) {
         primaryKey: true,
       },
 
-      refno: {
+refno: {
         type: DataTypes.TEXT,
+
       },
 
-      relatedcases: {
+relatedcases: {
         type: DataTypes.TEXT,
+
       },
 
-      dateofaccident: {
+dateofaccident: {
         type: DataTypes.DATEONLY,
 
-        get: function () {
+        get: function() {
           return this.getDataValue('dateofaccident')
             ? moment
                 .utc(this.getDataValue('dateofaccident'))
                 .format('YYYY-MM-DD')
             : null;
         },
+
       },
 
-      timebar: {
+timebar: {
         type: DataTypes.TEXT,
+
       },
 
-      caseprogressid: {
+caseprogressid: {
         type: DataTypes.INTEGER,
+
       },
 
-      clientid: {
+clientid: {
         type: DataTypes.INTEGER,
+
       },
 
-      casefilelocationid: {
+casefilelocationid: {
         type: DataTypes.INTEGER,
+
       },
 
-      casetypesid: {
+casetypesid: {
         type: DataTypes.INTEGER,
+
       },
 
-      introducers: {
+introducers: {
         type: DataTypes.TEXT,
+
       },
 
-      yearofcreation: {
+yearofcreation: {
         type: DataTypes.TEXT,
+
       },
 
-      caseno: {
+caseno: {
         type: DataTypes.TEXT,
+
       },
 
-      handlers: {
+handlers: {
         type: DataTypes.TEXT,
+
       },
 
-      supervisors: {
+supervisors: {
         type: DataTypes.TEXT,
+
       },
 
-      staffs: {
+staffs: {
         type: DataTypes.TEXT,
+
       },
 
-      dla: {
+dla: {
         type: DataTypes.TEXT,
+
       },
 
-      conflictcheck: {
+conflictcheck: {
         type: DataTypes.INTEGER,
+
       },
 
-      clientcheck: {
+clientcheck: {
         type: DataTypes.INTEGER,
+
       },
 
-      moneylaundrycompliance: {
+moneylaundrycompliance: {
         type: DataTypes.TEXT,
+
       },
 
-      temprefno: {
+temprefno: {
         type: DataTypes.TEXT,
+
       },
 
-      status: {
+status: {
         type: DataTypes.TEXT,
+
       },
 
-      caseprogress: {
+caseprogress: {
         type: DataTypes.INTEGER,
+
       },
 
-      workaccident: {
+workaccident: {
         type: DataTypes.INTEGER,
+
       },
 
-      liabilityadmitted: {
+liabilityadmitted: {
         type: DataTypes.INTEGER,
+
       },
 
-      remarks: {
+remarks: {
         type: DataTypes.TEXT,
+
       },
 
-      followuptasks: {
+followuptasks: {
         type: DataTypes.TEXT,
+
       },
 
-      approvalstatus: {
+approvalstatus: {
         type: DataTypes.INTEGER,
+
       },
 
-      createdate: {
+createdate: {
         type: DataTypes.DATE,
+
       },
 
-      createby: {
+createby: {
         type: DataTypes.TEXT,
+
       },
 
-      updatedate: {
+updatedate: {
         type: DataTypes.DATE,
+
       },
 
-      updateby: {
+updateby: {
         type: DataTypes.TEXT,
+
       },
 
       importHash: {
@@ -156,6 +186,7 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   caseheaderreferences.associate = (db) => {
+
     db.caseheaderreferences.belongsTo(db.users, {
       as: 'createdBy',
     });
@@ -167,3 +198,4 @@ module.exports = function (sequelize, DataTypes) {
 
   return caseheaderreferences;
 };
+

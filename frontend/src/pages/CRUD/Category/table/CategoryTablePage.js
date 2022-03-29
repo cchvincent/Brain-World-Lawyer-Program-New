@@ -7,6 +7,6 @@ const CategoryTablePage = () => {
       <CategoryTable />
     </div>
   );
-};
+}
 
 export default CategoryTablePage;

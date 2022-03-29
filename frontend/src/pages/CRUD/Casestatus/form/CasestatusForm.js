@@ -28,114 +28,139 @@ import FormValidations from 'components/FormItems/formValidations';
 import Widget from 'components/Widget';
 
 const CasestatusForm = (props) => {
+
   const {
-    isEditing,
-    isProfile,
-    findLoading,
-    saveLoading,
-    record,
-    onSubmit,
-    onCancel,
-    modal,
+  isEditing,
+  isProfile,
+  findLoading,
+  saveLoading,
+  record,
+  onSubmit,
+  onCancel,
+  modal
   } = props;
 
   const iniValues = () => {
-    return IniValues(casestatusFields, record || {});
-  };
+  return IniValues(casestatusFields, record || {});
+  }
 
   const formValidations = () => {
-    return FormValidations(casestatusFields, record || {});
-  };
+  return FormValidations(casestatusFields, record || {});
+  }
 
   const handleSubmit = (values) => {
-    const { id, ...data } = PreparedValues(casestatusFields, values || {});
-    onSubmit(id, data);
+  const { id, ...data } = PreparedValues(casestatusFields, values || {});
+  onSubmit(id, data);
   };
 
   const title = () => {
-    if (isProfile) {
-      return 'Edit My Profile';
-    }
+  if(isProfile) {
+  return 'Edit My Profile';
+  }
 
-    return isEditing ? 'Edit Casestatus' : 'Add Casestatus';
+  return isEditing
+  ? 'Edit Casestatus'
+  : 'Add Casestatus';
   };
 
   const renderForm = () => (
-    <Widget title={<h4>{title()}</h4>} collapse close>
-      <Formik
-        onSubmit={handleSubmit}
-        initialValues={iniValues()}
-        validationSchema={formValidations()}
-      >
-        {(form) => (
-          <form onSubmit={form.handleSubmit}>
-            <InputFormItem
+  <Widget title={<h4>{title()}</h4>} collapse close>
+  <Formik
+          onSubmit={handleSubmit}
+  initialValues={iniValues()}
+  validationSchema={formValidations()}
+  >
+  {(form) => (
+  <form onSubmit={form.handleSubmit}>
+
+      <InputFormItem
               name={'desc_en'}
-              schema={casestatusFields}
-              autoFocus
-            />
+      schema={casestatusFields}
 
-            <InputFormItem name={'desc_ch'} schema={casestatusFields} />
+        autoFocus
 
-            <DatePickerFormItem
+      />
+
+      <InputFormItem
+              name={'desc_ch'}
+      schema={casestatusFields}
+
+      />
+
+      <DatePickerFormItem
               name={'createdate'}
-              schema={casestatusFields}
-              showTimeInput
-            />
+      schema={casestatusFields}
+      showTimeInput
+      />
 
-            <InputFormItem name={'createby'} schema={casestatusFields} />
+      <InputFormItem
+              name={'createby'}
+      schema={casestatusFields}
 
-            <DatePickerFormItem
+      />
+
+      <DatePickerFormItem
               name={'updatedate'}
-              schema={casestatusFields}
-              showTimeInput
-            />
+      schema={casestatusFields}
+      showTimeInput
+      />
 
-            <InputFormItem name={'updateby'} schema={casestatusFields} />
+      <InputFormItem
+              name={'updateby'}
+      schema={casestatusFields}
 
-            <InputFormItem name={'status'} schema={casestatusFields} />
+      />
 
-            <div className='form-buttons'>
-              <button
-                className='btn btn-primary'
-                disabled={saveLoading}
-                type='button'
-                onClick={form.handleSubmit}
-              >
-                Save
-              </button>{' '}
-              <button
-                className='btn btn-light'
-                type='button'
-                disabled={saveLoading}
-                onClick={form.handleReset}
-              >
-                Reset
-              </button>{' '}
-              <button
-                className='btn btn-light'
-                type='button'
-                disabled={saveLoading}
-                onClick={() => onCancel()}
-              >
-                Cancel
-              </button>
-            </div>
-          </form>
-        )}
-      </Formik>
-    </Widget>
-  );
+      <InputFormItem
+              name={'status'}
+      schema={casestatusFields}
 
-  if (findLoading) {
-    return <Loader />;
-  }
+      />
 
-  if (isEditing && !record) {
-    return <Loader />;
-  }
+  <div className="form-buttons">
+    <button
+            className="btn btn-primary"
+            disabled={saveLoading}
+    type="button"
+    onClick={form.handleSubmit}
+    >
+    Save
+  </button>{' '}{' '}
 
-  return renderForm();
-};
+  <button
+          className="btn btn-light"
+          type="button"
+          disabled={saveLoading}
+  onClick={form.handleReset}
+  >
+  Reset
+</button>{' '}{' '}
+
+  <button
+          className="btn btn-light"
+          type="button"
+          disabled={saveLoading}
+  onClick={() => onCancel()}
+  >
+  Cancel
+</button>
+        </div>
+        </form>
+        )
+        }
+        </Formik>
+        </Widget>
+        );
+
+        if (findLoading) {
+        return <Loader />;
+        }
+
+        if (isEditing && !record) {
+        return <Loader />;
+        }
+
+        return renderForm();
+        }
 
 export default CasestatusForm;

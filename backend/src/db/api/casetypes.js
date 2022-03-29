@@ -1,3 +1,4 @@
+
 const db = require('../models');
 const FileDBApi = require('./file');
 const crypto = require('crypto');
@@ -7,34 +8,67 @@ const Sequelize = db.Sequelize;
 const Op = Sequelize.Op;
 
 module.exports = class CasetypesDBApi {
+
   static async create(data, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
-    const transaction = (options && options.transaction) || undefined;
+  const currentUser = (options && options.currentUser) || { id: null };
+  const transaction = (options && options.transaction) || undefined;
 
-    const casetypes = await db.casetypes.create(
-      {
-        id: data.id || undefined,
+  const casetypes = await db.casetypes.create(
+  {
+  id: data.id || undefined,
 
-        casetypes: data.casetypes || null,
-        desc_en: data.desc_en || null,
-        desc_ch: data.desc_ch || null,
-        status: data.status || null,
-        createdate: data.createdate || null,
-        createby: data.createby || null,
-        updatedate: data.updatedate || null,
-        updateby: data.updateby || null,
-        importHash: data.importHash || null,
-        createdById: currentUser.id,
-        updatedById: currentUser.id,
-      },
-      { transaction },
-    );
+    casetypes: data.casetypes
+    ||
+    null
+,
 
-    return casetypes;
+    desc_en: data.desc_en
+    ||
+    null
+,
+
+    desc_ch: data.desc_ch
+    ||
+    null
+,
+
+    status: data.status
+    ||
+    null
+,
+
+    createdate: data.createdate
+    ||
+    null
+,
+
+    createby: data.createby
+    ||
+    null
+,
+
+    updatedate: data.updatedate
+    ||
+    null
+,
+
+    updateby: data.updateby
+    ||
+    null
+,
+
+  importHash: data.importHash || null,
+  createdById: currentUser.id,
+  updatedById: currentUser.id,
+  },
+  { transaction },
+  );
+
+  return casetypes;
   }
 
   static async update(id, data, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
+    const currentUser = (options && options.currentUser) || {id: null};
     const transaction = (options && options.transaction) || undefined;
 
     const casetypes = await db.casetypes.findByPk(id, {
@@ -43,39 +77,69 @@ module.exports = class CasetypesDBApi {
 
     await casetypes.update(
       {
-        casetypes: data.casetypes || null,
-        desc_en: data.desc_en || null,
-        desc_ch: data.desc_ch || null,
-        status: data.status || null,
-        createdate: data.createdate || null,
-        createby: data.createby || null,
-        updatedate: data.updatedate || null,
-        updateby: data.updateby || null,
+
+        casetypes: data.casetypes
+        ||
+        null
+,
+
+        desc_en: data.desc_en
+        ||
+        null
+,
+
+        desc_ch: data.desc_ch
+        ||
+        null
+,
+
+        status: data.status
+        ||
+        null
+,
+
+        createdate: data.createdate
+        ||
+        null
+,
+
+        createby: data.createby
+        ||
+        null
+,
+
+        updatedate: data.updatedate
+        ||
+        null
+,
+
+        updateby: data.updateby
+        ||
+        null
+,
+
         updatedById: currentUser.id,
       },
-      { transaction },
+      {transaction},
     );
 
     return casetypes;
   }
 
   static async remove(id, options) {
-    const currentUser = (options && options.currentUser) || { id: null };
+    const currentUser = (options && options.currentUser) || {id: null};
     const transaction = (options && options.transaction) || undefined;
 
     const casetypes = await db.casetypes.findByPk(id, options);
 
-    await casetypes.update(
-      {
-        deletedBy: currentUser.id,
-      },
-      {
-        transaction,
-      },
-    );
+    await casetypes.update({
+      deletedBy: currentUser.id
+    }, {
+      transaction,
+    });
 
     await casetypes.destroy({
-      transaction,
+      transaction
     });
 
     return casetypes;
@@ -84,13 +148,16 @@ module.exports = class CasetypesDBApi {
   static async findBy(where, options) {
     const transaction = (options && options.transaction) || undefined;
 
-    const casetypes = await db.casetypes.findOne({ where }, { transaction });
+    const casetypes = await db.casetypes.findOne(
+      { where },
+      { transaction },
+    );
 
     if (!casetypes) {
       return casetypes;
     }
 
-    const output = casetypes.get({ plain: true });
+    const output = casetypes.get({plain: true});
 
     return output;
   }
@@ -99,14 +166,16 @@ module.exports = class CasetypesDBApi {
     var limit = filter.limit || 0;
     var offset = 0;
     if (filter.page != 1 && filter.page) {
-      const currentPage = +filter.page - 1;
-      offset = currentPage * limit;
+    const currentPage = +filter.page - 1;
+    offset = currentPage * limit;
     }
     var orderBy = null;
 
     const transaction = (options && options.transaction) || undefined;
     let where = {};
-    let include = [];
+    let include = [
+
+    ];
 
     if (filter) {
       if (filter.id) {
@@ -119,42 +188,66 @@ module.exports = class CasetypesDBApi {
       if (filter.casetypes) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casetypes', 'casetypes', filter.casetypes),
+          [Op.and]: Utils.ilike(
+            'casetypes',
+            'casetypes',
+            filter.casetypes,
+          ),
         };
       }
 
       if (filter.desc_en) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casetypes', 'desc_en', filter.desc_en),
+          [Op.and]: Utils.ilike(
+            'casetypes',
+            'desc_en',
+            filter.desc_en,
+          ),
         };
       }
 
       if (filter.desc_ch) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casetypes', 'desc_ch', filter.desc_ch),
+          [Op.and]: Utils.ilike(
+            'casetypes',
+            'desc_ch',
+            filter.desc_ch,
+          ),
         };
       }
 
       if (filter.status) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casetypes', 'status', filter.status),
+          [Op.and]: Utils.ilike(
+            'casetypes',
+            'status',
+            filter.status,
+          ),
         };
       }
 
       if (filter.createby) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casetypes', 'createby', filter.createby),
+          [Op.and]: Utils.ilike(
+            'casetypes',
+            'createby',
+            filter.createby,
+          ),
         };
       }
 
       if (filter.updateby) {
         where = {
           ...where,
-          [Op.and]: Utils.ilike('casetypes', 'updateby', filter.updateby),
+          [Op.and]: Utils.ilike(
+            'casetypes',
+            'updateby',
+            filter.updateby,
+          ),
         };
       }
 
@@ -214,7 +307,9 @@ module.exports = class CasetypesDBApi {
       ) {
         where = {
           ...where,
-          active: filter.active === true || filter.active === 'true',
+          active:
+            filter.active === true ||
+            filter.active === 'true',
         };
       }
 
@@ -243,19 +338,23 @@ module.exports = class CasetypesDBApi {
       }
     }
 
-    let { rows, count } = await db.casetypes.findAndCountAll({
-      where,
-      include,
-      limit: limit ? Number(limit) : undefined,
-      offset: offset ? Number(offset) : undefined,
-      order: orderBy ? [orderBy.split('_')] : [['createdAt', 'DESC']],
-      transaction,
-    });
+    let { rows, count } = await db.casetypes.findAndCountAll(
+      {
+        where,
+        include,
+        limit: limit ? Number(limit) : undefined,
+        offset: offset ? Number(offset) : undefined,
+        order: orderBy
+          ? [orderBy.split('_')]
+          : [['createdAt', 'DESC']],
+        transaction,
+      },
+    );
 
-    //    rows = await this._fillWithRelationsAndFilesForRows(
-    //      rows,
-    //      options,
-    //    );
+//    rows = await this._fillWithRelationsAndFilesForRows(
+//      rows,
+//      options,
+//    );
 
     return { rows, count };
   }
@@ -267,13 +366,17 @@ module.exports = class CasetypesDBApi {
       where = {
         [Op.or]: [
           { ['id']: Utils.uuid(query) },
-          Utils.ilike('casetypes', 'casetypes', query),
+          Utils.ilike(
+            'casetypes',
+            'casetypes',
+            query,
+          ),
         ],
       };
     }
 
     const records = await db.casetypes.findAll({
-      attributes: ['id', 'casetypes'],
+      attributes: [ 'id', 'casetypes' ],
       where,
       limit: limit ? Number(limit) : undefined,
       orderBy: [['casetypes', 'ASC']],
@@ -284,4 +387,6 @@ module.exports = class CasetypesDBApi {
       label: record.casetypes,
     }));
   }
+
 };
+

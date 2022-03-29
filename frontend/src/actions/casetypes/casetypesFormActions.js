@@ -17,14 +17,14 @@ const actions = {
         type: 'CASETYPES_FORM_FIND_STARTED',
       });
 
-      axios.get(`/casetypes/${id}`).then((res) => {
+      axios.get(`/casetypes/${id}`).then(res => {
         const record = res.data;
 
         dispatch({
           type: 'CASETYPES_FORM_FIND_SUCCESS',
           payload: record,
         });
-      });
+      })
     } catch (error) {
       Errors.handle(error);
 
@@ -42,14 +42,14 @@ const actions = {
         type: 'CASETYPES_FORM_CREATE_STARTED',
       });
 
-      axios.post('/casetypes', { data: values }).then((res) => {
+      axios.post('/casetypes', { data: values }).then(res => {
         dispatch({
           type: 'CASETYPES_FORM_CREATE_SUCCESS',
         });
 
         toast.success('Casetypes created');
         dispatch(push('/admin/casetypes'));
-      });
+      })
     } catch (error) {
       Errors.handle(error);
 
@@ -59,13 +59,16 @@ const actions = {
     }
   },
 
-  doUpdate: (id, values, isProfile) => async (dispatch, getState) => {
+  doUpdate: (id, values, isProfile) => async (
+    dispatch,
+    getState,
+  ) => {
     try {
       dispatch({
         type: 'CASETYPES_FORM_UPDATE_STARTED',
       });
 
-      await axios.put(`/casetypes/${id}`, { id, data: values });
+      await axios.put(`/casetypes/${id}`, {id, data: values});
 
       dispatch(doInit());
 

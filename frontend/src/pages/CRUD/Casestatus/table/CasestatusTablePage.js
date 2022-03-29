@@ -7,6 +7,6 @@ const CasestatusTablePage = () => {
       <CasestatusTable />
     </div>
   );
-};
+}
 
 export default CasestatusTablePage;

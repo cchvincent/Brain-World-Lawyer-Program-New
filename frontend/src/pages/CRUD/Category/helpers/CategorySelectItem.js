@@ -21,9 +21,7 @@ const CategorySelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label
-        ? originalValue.label
-        : originalValue.desc_en;
+      let label = originalValue.label ? originalValue.label : originalValue.desc_en;
 
       return {
         key: value,
@@ -44,7 +42,10 @@ const CategorySelectItem = (props) => {
     },
   };
 
-  const { form, ...rest } = props;
+  const {
+    form,
+    ...rest
+  } = props;
 
   return (
     <React.Fragment>
@@ -56,10 +57,12 @@ const CategorySelectItem = (props) => {
       />
     </React.Fragment>
   );
-};
+}
 
 const select = (state) => ({
-  hasPermissionToCreate: state.category.hasPermissionToCreate,
+  hasPermissionToCreate: state.category.hasPermissionToCreate
 });
 
-export default connect(select)(CategorySelectItem);
+export default connect(select)(
+  CategorySelectItem,
+);

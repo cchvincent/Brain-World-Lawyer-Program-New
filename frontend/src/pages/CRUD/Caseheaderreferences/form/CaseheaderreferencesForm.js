@@ -28,241 +28,266 @@ import FormValidations from 'components/FormItems/formValidations';
 import Widget from 'components/Widget';
 
 const CaseheaderreferencesForm = (props) => {
+
   const {
-    isEditing,
-    isProfile,
-    findLoading,
-    saveLoading,
-    record,
-    onSubmit,
-    onCancel,
-    modal,
+  isEditing,
+  isProfile,
+  findLoading,
+  saveLoading,
+  record,
+  onSubmit,
+  onCancel,
+  modal
   } = props;
 
   const iniValues = () => {
-    return IniValues(caseheaderreferencesFields, record || {});
-  };
+  return IniValues(caseheaderreferencesFields, record || {});
+  }
 
   const formValidations = () => {
-    return FormValidations(caseheaderreferencesFields, record || {});
-  };
+  return FormValidations(caseheaderreferencesFields, record || {});
+  }
 
   const handleSubmit = (values) => {
-    const { id, ...data } = PreparedValues(
-      caseheaderreferencesFields,
-      values || {},
-    );
-    onSubmit(id, data);
+  const { id, ...data } = PreparedValues(caseheaderreferencesFields, values || {});
+  onSubmit(id, data);
   };
 
   const title = () => {
-    if (isProfile) {
-      return 'Edit My Profile';
-    }
+  if(isProfile) {
+  return 'Edit My Profile';
+  }
 
-    return isEditing ? 'Edit Caseheaderreferences' : 'Add Caseheaderreferences';
+  return isEditing
+  ? 'Edit Caseheaderreferences'
+  : 'Add Caseheaderreferences';
   };
 
   const renderForm = () => (
-    <Widget title={<h4>{title()}</h4>} collapse close>
-      <Formik
-        onSubmit={handleSubmit}
-        initialValues={iniValues()}
-        validationSchema={formValidations()}
-      >
-        {(form) => (
-          <form onSubmit={form.handleSubmit}>
-            <InputFormItem
+  <Widget title={<h4>{title()}</h4>} collapse close>
+  <Formik
+          onSubmit={handleSubmit}
+  initialValues={iniValues()}
+  validationSchema={formValidations()}
+  >
+  {(form) => (
+  <form onSubmit={form.handleSubmit}>
+
+      <InputFormItem
               name={'refno'}
-              schema={caseheaderreferencesFields}
-              autoFocus
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+        autoFocus
+
+      />
+
+      <InputFormItem
               name={'relatedcases'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <DatePickerFormItem
+      />
+
+      <DatePickerFormItem
               name={'dateofaccident'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputFormItem
+      <InputFormItem
               name={'timebar'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputNumberFormItem
+      />
+
+      <InputNumberFormItem
               name={'caseprogressid'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputNumberFormItem
+      <InputNumberFormItem
               name={'clientid'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputNumberFormItem
+      <InputNumberFormItem
               name={'casefilelocationid'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputNumberFormItem
+      <InputNumberFormItem
               name={'casetypesid'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <TextAreaFormItem
+      <TextAreaFormItem
               name={'introducers'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'yearofcreation'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'caseno'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'handlers'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'supervisors'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'staffs'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem name={'dla'} schema={caseheaderreferencesFields} />
+      />
 
-            <InputNumberFormItem
+      <InputFormItem
+              name={'dla'}
+      schema={caseheaderreferencesFields}
+
+      />
+
+      <InputNumberFormItem
               name={'conflictcheck'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputNumberFormItem
+      <InputNumberFormItem
               name={'clientcheck'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputFormItem
+      <InputFormItem
               name={'moneylaundrycompliance'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'temprefno'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputFormItem
+      />
+
+      <InputFormItem
               name={'status'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputNumberFormItem
+      />
+
+      <InputNumberFormItem
               name={'caseprogress'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputNumberFormItem
+      <InputNumberFormItem
               name={'workaccident'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <InputNumberFormItem
+      <InputNumberFormItem
               name={'liabilityadmitted'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <TextAreaFormItem
+      <TextAreaFormItem
               name={'remarks'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <TextAreaFormItem
+      />
+
+      <TextAreaFormItem
               name={'followuptasks'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <InputNumberFormItem
+      />
+
+      <InputNumberFormItem
               name={'approvalstatus'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
+      />
 
-            <DatePickerFormItem
+      <DatePickerFormItem
               name={'createdate'}
-              schema={caseheaderreferencesFields}
-              showTimeInput
-            />
+      schema={caseheaderreferencesFields}
+      showTimeInput
+      />
 
-            <InputFormItem
+      <InputFormItem
               name={'createby'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <DatePickerFormItem
+      />
+
+      <DatePickerFormItem
               name={'updatedate'}
-              schema={caseheaderreferencesFields}
-              showTimeInput
-            />
+      schema={caseheaderreferencesFields}
+      showTimeInput
+      />
 
-            <InputFormItem
+      <InputFormItem
               name={'updateby'}
-              schema={caseheaderreferencesFields}
-            />
+      schema={caseheaderreferencesFields}
 
-            <div className='form-buttons'>
-              <button
-                className='btn btn-primary'
-                disabled={saveLoading}
-                type='button'
-                onClick={form.handleSubmit}
-              >
-                Save
-              </button>{' '}
-              <button
-                className='btn btn-light'
-                type='button'
-                disabled={saveLoading}
-                onClick={form.handleReset}
-              >
-                Reset
-              </button>{' '}
-              <button
-                className='btn btn-light'
-                type='button'
-                disabled={saveLoading}
-                onClick={() => onCancel()}
-              >
-                Cancel
-              </button>
-            </div>
-          </form>
-        )}
-      </Formik>
-    </Widget>
-  );
+      />
 
-  if (findLoading) {
-    return <Loader />;
-  }
+  <div className="form-buttons">
+    <button
+            className="btn btn-primary"
+            disabled={saveLoading}
+    type="button"
+    onClick={form.handleSubmit}
+    >
+    Save
+  </button>{' '}{' '}
 
-  if (isEditing && !record) {
-    return <Loader />;
-  }
+  <button
+          className="btn btn-light"
+          type="button"
+          disabled={saveLoading}
+  onClick={form.handleReset}
+  >
+  Reset
+</button>{' '}{' '}
 
-  return renderForm();
-};
+  <button
+          className="btn btn-light"
+          type="button"
+          disabled={saveLoading}
+  onClick={() => onCancel()}
+  >
+  Cancel
+</button>
+        </div>
+        </form>
+        )
+        }
+        </Formik>
+        </Widget>
+        );
+
+        if (findLoading) {
+        return <Loader />;
+        }
+
+        if (isEditing && !record) {
+        return <Loader />;
+        }
+
+        return renderForm();
+        }
 
 export default CaseheaderreferencesForm;
