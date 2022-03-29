@@ -14,25 +14,25 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/file');
 
-const filedocsRoutes = require('./routes/filedocs');
+const bw_filesRoutes = require('./routes/bw_files');
 
-const filesRoutes = require('./routes/files');
+const bw_filedocsRoutes = require('./routes/bw_filedocs');
 
-const clientsRoutes = require('./routes/clients');
+const bw_clientsRoutes = require('./routes/bw_clients');
 
-const companysRoutes = require('./routes/companys');
+const bw_companysRoutes = require('./routes/bw_companys');
 
-const caseserialRoutes = require('./routes/caseserial');
+const bw_caseserialRoutes = require('./routes/bw_caseserial');
 
-const casestatusRoutes = require('./routes/casestatus');
+const bw_casestatusRoutes = require('./routes/bw_casestatus');
 
-const casetypesRoutes = require('./routes/casetypes');
+const bw_casetypesRoutes = require('./routes/bw_casetypes');
 
-const categoryRoutes = require('./routes/category');
+const bw_categoryRoutes = require('./routes/bw_category');
+
+const bw_caseheaderreferencesRoutes = require('./routes/bw_caseheaderreferences');
 
 const usersRoutes = require('./routes/users');
-
-const caseheaderreferencesRoutes = require('./routes/caseheaderreferences');
 
 const options = {
   definition: {
@@ -83,25 +83,25 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/file', fileRoutes);
 
-app.use('/api/filedocs', passport.authenticate('jwt', {session: false}), filedocsRoutes);
+app.use('/api/bw_files', passport.authenticate('jwt', {session: false}), bw_filesRoutes);
 
-app.use('/api/files', passport.authenticate('jwt', {session: false}), filesRoutes);
+app.use('/api/bw_filedocs', passport.authenticate('jwt', {session: false}), bw_filedocsRoutes);
 
-app.use('/api/clients', passport.authenticate('jwt', {session: false}), clientsRoutes);
+app.use('/api/bw_clients', passport.authenticate('jwt', {session: false}), bw_clientsRoutes);
 
-app.use('/api/companys', passport.authenticate('jwt', {session: false}), companysRoutes);
+app.use('/api/bw_companys', passport.authenticate('jwt', {session: false}), bw_companysRoutes);
 
-app.use('/api/caseserial', passport.authenticate('jwt', {session: false}), caseserialRoutes);
+app.use('/api/bw_caseserial', passport.authenticate('jwt', {session: false}), bw_caseserialRoutes);
 
-app.use('/api/casestatus', passport.authenticate('jwt', {session: false}), casestatusRoutes);
+app.use('/api/bw_casestatus', passport.authenticate('jwt', {session: false}), bw_casestatusRoutes);
 
-app.use('/api/casetypes', passport.authenticate('jwt', {session: false}), casetypesRoutes);
+app.use('/api/bw_casetypes', passport.authenticate('jwt', {session: false}), bw_casetypesRoutes);
 
-app.use('/api/category', passport.authenticate('jwt', {session: false}), categoryRoutes);
+app.use('/api/bw_category', passport.authenticate('jwt', {session: false}), bw_categoryRoutes);
+
+app.use('/api/bw_caseheaderreferences', passport.authenticate('jwt', {session: false}), bw_caseheaderreferencesRoutes);
 
 app.use('/api/users', passport.authenticate('jwt', {session: false}), usersRoutes);
-
-app.use('/api/caseheaderreferences', passport.authenticate('jwt', {session: false}), caseheaderreferencesRoutes);
 
 const publicDir = path.join(
   __dirname,

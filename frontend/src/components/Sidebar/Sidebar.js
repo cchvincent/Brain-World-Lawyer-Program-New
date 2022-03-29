@@ -110,8 +110,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Filedocs"
-            link="/admin/filedocs"
+            label="Bw_files"
+            link="/admin/bw_files"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -119,8 +119,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Files"
-            link="/admin/files"
+            label="Bw_filedocs"
+            link="/admin/bw_filedocs"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -128,8 +128,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Clients"
-            link="/admin/clients"
+            label="Bw_clients"
+            link="/admin/bw_clients"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -137,8 +137,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Companys"
-            link="/admin/companys"
+            label="Bw_companys"
+            link="/admin/bw_companys"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -146,8 +146,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Caseserial"
-            link="/admin/caseserial"
+            label="Bw_caseserial"
+            link="/admin/bw_caseserial"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -155,8 +155,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Casestatus"
-            link="/admin/casestatus"
+            label="Bw_casestatus"
+            link="/admin/bw_casestatus"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -164,8 +164,8 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Casetypes"
-            link="/admin/casetypes"
+            label="Bw_casetypes"
+            link="/admin/bw_casetypes"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -173,8 +173,17 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Category"
-            link="/admin/category"
+            label="Bw_category"
+            link="/admin/bw_category"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Bw_caseheaderreferences"
+            link="/admin/bw_caseheaderreferences"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
@@ -184,15 +193,6 @@ function Sidebar({ location, structure }) {
           <SidebarLink
             label="Users"
             link="/admin/users"
-            location={location}
-            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
-            icon={<CoreIcon />}
-            toggleDrawer={toggleDrawer(true)}
-          />
-
-          <SidebarLink
-            label="Caseheaderreferences"
-            link="/admin/caseheaderreferences"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}

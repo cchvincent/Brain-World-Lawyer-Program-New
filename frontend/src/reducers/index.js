@@ -6,25 +6,25 @@ import layout from 'reducers/layout';
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-import filedocs from 'reducers/filedocs/filedocsReducers';
+import bw_files from 'reducers/bw_files/bw_filesReducers';
 
-import files from 'reducers/files/filesReducers';
+import bw_filedocs from 'reducers/bw_filedocs/bw_filedocsReducers';
 
-import clients from 'reducers/clients/clientsReducers';
+import bw_clients from 'reducers/bw_clients/bw_clientsReducers';
 
-import companys from 'reducers/companys/companysReducers';
+import bw_companys from 'reducers/bw_companys/bw_companysReducers';
 
-import caseserial from 'reducers/caseserial/caseserialReducers';
+import bw_caseserial from 'reducers/bw_caseserial/bw_caseserialReducers';
 
-import casestatus from 'reducers/casestatus/casestatusReducers';
+import bw_casestatus from 'reducers/bw_casestatus/bw_casestatusReducers';
 
-import casetypes from 'reducers/casetypes/casetypesReducers';
+import bw_casetypes from 'reducers/bw_casetypes/bw_casetypesReducers';
 
-import category from 'reducers/category/categoryReducers';
+import bw_category from 'reducers/bw_category/bw_categoryReducers';
+
+import bw_caseheaderreferences from 'reducers/bw_caseheaderreferences/bw_caseheaderreferencesReducers';
 
 import users from 'reducers/users/usersReducers';
-
-import caseheaderreferences from 'reducers/caseheaderreferences/caseheaderreferencesReducers';
 
 export default (history) =>
   combineReducers({
@@ -34,25 +34,25 @@ export default (history) =>
     auth,
     navigation,
 
-    filedocs,
+    bw_files,
 
-    files,
+    bw_filedocs,
 
-    clients,
+    bw_clients,
 
-    companys,
+    bw_companys,
 
-    caseserial,
+    bw_caseserial,
 
-    casestatus,
+    bw_casestatus,
 
-    casetypes,
+    bw_casetypes,
 
-    category,
+    bw_category,
+
+    bw_caseheaderreferences,
 
     users,
-
-    caseheaderreferences,
 
   });
 

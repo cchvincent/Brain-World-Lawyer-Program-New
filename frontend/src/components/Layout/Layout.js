@@ -32,45 +32,45 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 // context
 import { useLayoutState } from '../../context/LayoutContext'
 
-import FiledocsFormPage from 'pages/CRUD/Filedocs/form/FiledocsFormPage';
-import FiledocsTablePage from 'pages/CRUD/Filedocs/table/FiledocsTablePage';
-import FiledocsViewPage from 'pages/CRUD/Filedocs/page/FiledocsViewPage';
+import Bw_filesFormPage from 'pages/CRUD/Bw_files/form/Bw_filesFormPage';
+import Bw_filesTablePage from 'pages/CRUD/Bw_files/table/Bw_filesTablePage';
+import Bw_filesViewPage from 'pages/CRUD/Bw_files/page/Bw_filesViewPage';
 
-import FilesFormPage from 'pages/CRUD/Files/form/FilesFormPage';
-import FilesTablePage from 'pages/CRUD/Files/table/FilesTablePage';
-import FilesViewPage from 'pages/CRUD/Files/page/FilesViewPage';
+import Bw_filedocsFormPage from 'pages/CRUD/Bw_filedocs/form/Bw_filedocsFormPage';
+import Bw_filedocsTablePage from 'pages/CRUD/Bw_filedocs/table/Bw_filedocsTablePage';
+import Bw_filedocsViewPage from 'pages/CRUD/Bw_filedocs/page/Bw_filedocsViewPage';
 
-import ClientsFormPage from 'pages/CRUD/Clients/form/ClientsFormPage';
-import ClientsTablePage from 'pages/CRUD/Clients/table/ClientsTablePage';
-import ClientsViewPage from 'pages/CRUD/Clients/page/ClientsViewPage';
+import Bw_clientsFormPage from 'pages/CRUD/Bw_clients/form/Bw_clientsFormPage';
+import Bw_clientsTablePage from 'pages/CRUD/Bw_clients/table/Bw_clientsTablePage';
+import Bw_clientsViewPage from 'pages/CRUD/Bw_clients/page/Bw_clientsViewPage';
 
-import CompanysFormPage from 'pages/CRUD/Companys/form/CompanysFormPage';
-import CompanysTablePage from 'pages/CRUD/Companys/table/CompanysTablePage';
-import CompanysViewPage from 'pages/CRUD/Companys/page/CompanysViewPage';
+import Bw_companysFormPage from 'pages/CRUD/Bw_companys/form/Bw_companysFormPage';
+import Bw_companysTablePage from 'pages/CRUD/Bw_companys/table/Bw_companysTablePage';
+import Bw_companysViewPage from 'pages/CRUD/Bw_companys/page/Bw_companysViewPage';
 
-import CaseserialFormPage from 'pages/CRUD/Caseserial/form/CaseserialFormPage';
-import CaseserialTablePage from 'pages/CRUD/Caseserial/table/CaseserialTablePage';
-import CaseserialViewPage from 'pages/CRUD/Caseserial/page/CaseserialViewPage';
+import Bw_caseserialFormPage from 'pages/CRUD/Bw_caseserial/form/Bw_caseserialFormPage';
+import Bw_caseserialTablePage from 'pages/CRUD/Bw_caseserial/table/Bw_caseserialTablePage';
+import Bw_caseserialViewPage from 'pages/CRUD/Bw_caseserial/page/Bw_caseserialViewPage';
 
-import CasestatusFormPage from 'pages/CRUD/Casestatus/form/CasestatusFormPage';
-import CasestatusTablePage from 'pages/CRUD/Casestatus/table/CasestatusTablePage';
-import CasestatusViewPage from 'pages/CRUD/Casestatus/page/CasestatusViewPage';
+import Bw_casestatusFormPage from 'pages/CRUD/Bw_casestatus/form/Bw_casestatusFormPage';
+import Bw_casestatusTablePage from 'pages/CRUD/Bw_casestatus/table/Bw_casestatusTablePage';
+import Bw_casestatusViewPage from 'pages/CRUD/Bw_casestatus/page/Bw_casestatusViewPage';
 
-import CasetypesFormPage from 'pages/CRUD/Casetypes/form/CasetypesFormPage';
-import CasetypesTablePage from 'pages/CRUD/Casetypes/table/CasetypesTablePage';
-import CasetypesViewPage from 'pages/CRUD/Casetypes/page/CasetypesViewPage';
+import Bw_casetypesFormPage from 'pages/CRUD/Bw_casetypes/form/Bw_casetypesFormPage';
+import Bw_casetypesTablePage from 'pages/CRUD/Bw_casetypes/table/Bw_casetypesTablePage';
+import Bw_casetypesViewPage from 'pages/CRUD/Bw_casetypes/page/Bw_casetypesViewPage';
 
-import CategoryFormPage from 'pages/CRUD/Category/form/CategoryFormPage';
-import CategoryTablePage from 'pages/CRUD/Category/table/CategoryTablePage';
-import CategoryViewPage from 'pages/CRUD/Category/page/CategoryViewPage';
+import Bw_categoryFormPage from 'pages/CRUD/Bw_category/form/Bw_categoryFormPage';
+import Bw_categoryTablePage from 'pages/CRUD/Bw_category/table/Bw_categoryTablePage';
+import Bw_categoryViewPage from 'pages/CRUD/Bw_category/page/Bw_categoryViewPage';
+
+import Bw_caseheaderreferencesFormPage from 'pages/CRUD/Bw_caseheaderreferences/form/Bw_caseheaderreferencesFormPage';
+import Bw_caseheaderreferencesTablePage from 'pages/CRUD/Bw_caseheaderreferences/table/Bw_caseheaderreferencesTablePage';
+import Bw_caseheaderreferencesViewPage from 'pages/CRUD/Bw_caseheaderreferences/page/Bw_caseheaderreferencesViewPage';
 
 import UsersFormPage from 'pages/CRUD/Users/form/UsersFormPage';
 import UsersTablePage from 'pages/CRUD/Users/table/UsersTablePage';
 import UsersViewPage from 'pages/CRUD/Users/page/UsersViewPage';
-
-import CaseheaderreferencesFormPage from 'pages/CRUD/Caseheaderreferences/form/CaseheaderreferencesFormPage';
-import CaseheaderreferencesTablePage from 'pages/CRUD/Caseheaderreferences/table/CaseheaderreferencesTablePage';
-import CaseheaderreferencesViewPage from 'pages/CRUD/Caseheaderreferences/page/CaseheaderreferencesViewPage';
 
 function Layout(props) {
     const classes = useStyles()
@@ -101,55 +101,55 @@ function Layout(props) {
                     <Route path="/admin/dashboard" component={Dashboard} />
                     <Route path="/admin/user/edit" component={EditUser} />
 
-                    <Route path={"/admin/filedocs"} exact component={FiledocsTablePage} />
-                    <Route path={"/admin/filedocs/new"} exact component={FiledocsFormPage} />
-                    <Route path={"/admin/filedocs/:id/edit"} exact component={FiledocsFormPage} />
-                    <Route path={"/admin/filedocs/:id"} exact component={FiledocsViewPage} />
+                    <Route path={"/admin/bw_files"} exact component={Bw_filesTablePage} />
+                    <Route path={"/admin/bw_files/new"} exact component={Bw_filesFormPage} />
+                    <Route path={"/admin/bw_files/:id/edit"} exact component={Bw_filesFormPage} />
+                    <Route path={"/admin/bw_files/:id"} exact component={Bw_filesViewPage} />
 
-                    <Route path={"/admin/files"} exact component={FilesTablePage} />
-                    <Route path={"/admin/files/new"} exact component={FilesFormPage} />
-                    <Route path={"/admin/files/:id/edit"} exact component={FilesFormPage} />
-                    <Route path={"/admin/files/:id"} exact component={FilesViewPage} />
+                    <Route path={"/admin/bw_filedocs"} exact component={Bw_filedocsTablePage} />
+                    <Route path={"/admin/bw_filedocs/new"} exact component={Bw_filedocsFormPage} />
+                    <Route path={"/admin/bw_filedocs/:id/edit"} exact component={Bw_filedocsFormPage} />
+                    <Route path={"/admin/bw_filedocs/:id"} exact component={Bw_filedocsViewPage} />
 
-                    <Route path={"/admin/clients"} exact component={ClientsTablePage} />
-                    <Route path={"/admin/clients/new"} exact component={ClientsFormPage} />
-                    <Route path={"/admin/clients/:id/edit"} exact component={ClientsFormPage} />
-                    <Route path={"/admin/clients/:id"} exact component={ClientsViewPage} />
+                    <Route path={"/admin/bw_clients"} exact component={Bw_clientsTablePage} />
+                    <Route path={"/admin/bw_clients/new"} exact component={Bw_clientsFormPage} />
+                    <Route path={"/admin/bw_clients/:id/edit"} exact component={Bw_clientsFormPage} />
+                    <Route path={"/admin/bw_clients/:id"} exact component={Bw_clientsViewPage} />
 
-                    <Route path={"/admin/companys"} exact component={CompanysTablePage} />
-                    <Route path={"/admin/companys/new"} exact component={CompanysFormPage} />
-                    <Route path={"/admin/companys/:id/edit"} exact component={CompanysFormPage} />
-                    <Route path={"/admin/companys/:id"} exact component={CompanysViewPage} />
+                    <Route path={"/admin/bw_companys"} exact component={Bw_companysTablePage} />
+                    <Route path={"/admin/bw_companys/new"} exact component={Bw_companysFormPage} />
+                    <Route path={"/admin/bw_companys/:id/edit"} exact component={Bw_companysFormPage} />
+                    <Route path={"/admin/bw_companys/:id"} exact component={Bw_companysViewPage} />
 
-                    <Route path={"/admin/caseserial"} exact component={CaseserialTablePage} />
-                    <Route path={"/admin/caseserial/new"} exact component={CaseserialFormPage} />
-                    <Route path={"/admin/caseserial/:id/edit"} exact component={CaseserialFormPage} />
-                    <Route path={"/admin/caseserial/:id"} exact component={CaseserialViewPage} />
+                    <Route path={"/admin/bw_caseserial"} exact component={Bw_caseserialTablePage} />
+                    <Route path={"/admin/bw_caseserial/new"} exact component={Bw_caseserialFormPage} />
+                    <Route path={"/admin/bw_caseserial/:id/edit"} exact component={Bw_caseserialFormPage} />
+                    <Route path={"/admin/bw_caseserial/:id"} exact component={Bw_caseserialViewPage} />
 
-                    <Route path={"/admin/casestatus"} exact component={CasestatusTablePage} />
-                    <Route path={"/admin/casestatus/new"} exact component={CasestatusFormPage} />
-                    <Route path={"/admin/casestatus/:id/edit"} exact component={CasestatusFormPage} />
-                    <Route path={"/admin/casestatus/:id"} exact component={CasestatusViewPage} />
+                    <Route path={"/admin/bw_casestatus"} exact component={Bw_casestatusTablePage} />
+                    <Route path={"/admin/bw_casestatus/new"} exact component={Bw_casestatusFormPage} />
+                    <Route path={"/admin/bw_casestatus/:id/edit"} exact component={Bw_casestatusFormPage} />
+                    <Route path={"/admin/bw_casestatus/:id"} exact component={Bw_casestatusViewPage} />
 
-                    <Route path={"/admin/casetypes"} exact component={CasetypesTablePage} />
-                    <Route path={"/admin/casetypes/new"} exact component={CasetypesFormPage} />
-                    <Route path={"/admin/casetypes/:id/edit"} exact component={CasetypesFormPage} />
-                    <Route path={"/admin/casetypes/:id"} exact component={CasetypesViewPage} />
+                    <Route path={"/admin/bw_casetypes"} exact component={Bw_casetypesTablePage} />
+                    <Route path={"/admin/bw_casetypes/new"} exact component={Bw_casetypesFormPage} />
+                    <Route path={"/admin/bw_casetypes/:id/edit"} exact component={Bw_casetypesFormPage} />
+                    <Route path={"/admin/bw_casetypes/:id"} exact component={Bw_casetypesViewPage} />
 
-                    <Route path={"/admin/category"} exact component={CategoryTablePage} />
-                    <Route path={"/admin/category/new"} exact component={CategoryFormPage} />
-                    <Route path={"/admin/category/:id/edit"} exact component={CategoryFormPage} />
-                    <Route path={"/admin/category/:id"} exact component={CategoryViewPage} />
+                    <Route path={"/admin/bw_category"} exact component={Bw_categoryTablePage} />
+                    <Route path={"/admin/bw_category/new"} exact component={Bw_categoryFormPage} />
+                    <Route path={"/admin/bw_category/:id/edit"} exact component={Bw_categoryFormPage} />
+                    <Route path={"/admin/bw_category/:id"} exact component={Bw_categoryViewPage} />
+
+                    <Route path={"/admin/bw_caseheaderreferences"} exact component={Bw_caseheaderreferencesTablePage} />
+                    <Route path={"/admin/bw_caseheaderreferences/new"} exact component={Bw_caseheaderreferencesFormPage} />
+                    <Route path={"/admin/bw_caseheaderreferences/:id/edit"} exact component={Bw_caseheaderreferencesFormPage} />
+                    <Route path={"/admin/bw_caseheaderreferences/:id"} exact component={Bw_caseheaderreferencesViewPage} />
 
                     <Route path={"/admin/users"} exact component={UsersTablePage} />
                     <Route path={"/admin/users/new"} exact component={UsersFormPage} />
                     <Route path={"/admin/users/:id/edit"} exact component={UsersFormPage} />
                     <Route path={"/admin/users/:id"} exact component={UsersViewPage} />
-
-                    <Route path={"/admin/caseheaderreferences"} exact component={CaseheaderreferencesTablePage} />
-                    <Route path={"/admin/caseheaderreferences/new"} exact component={CaseheaderreferencesFormPage} />
-                    <Route path={"/admin/caseheaderreferences/:id/edit"} exact component={CaseheaderreferencesFormPage} />
-                    <Route path={"/admin/caseheaderreferences/:id"} exact component={CaseheaderreferencesViewPage} />
 
                 </Switch>
                 <Fab
