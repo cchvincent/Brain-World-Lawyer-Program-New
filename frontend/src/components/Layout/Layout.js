@@ -32,6 +32,22 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 // context
 import { useLayoutState } from '../../context/LayoutContext'
 
+import FiledocsFormPage from 'pages/CRUD/Filedocs/form/FiledocsFormPage';
+import FiledocsTablePage from 'pages/CRUD/Filedocs/table/FiledocsTablePage';
+import FiledocsViewPage from 'pages/CRUD/Filedocs/page/FiledocsViewPage';
+
+import FilesFormPage from 'pages/CRUD/Files/form/FilesFormPage';
+import FilesTablePage from 'pages/CRUD/Files/table/FilesTablePage';
+import FilesViewPage from 'pages/CRUD/Files/page/FilesViewPage';
+
+import ClientsFormPage from 'pages/CRUD/Clients/form/ClientsFormPage';
+import ClientsTablePage from 'pages/CRUD/Clients/table/ClientsTablePage';
+import ClientsViewPage from 'pages/CRUD/Clients/page/ClientsViewPage';
+
+import CompanysFormPage from 'pages/CRUD/Companys/form/CompanysFormPage';
+import CompanysTablePage from 'pages/CRUD/Companys/table/CompanysTablePage';
+import CompanysViewPage from 'pages/CRUD/Companys/page/CompanysViewPage';
+
 import CaseserialFormPage from 'pages/CRUD/Caseserial/form/CaseserialFormPage';
 import CaseserialTablePage from 'pages/CRUD/Caseserial/table/CaseserialTablePage';
 import CaseserialViewPage from 'pages/CRUD/Caseserial/page/CaseserialViewPage';
@@ -84,6 +100,26 @@ function Layout(props) {
 
                     <Route path="/admin/dashboard" component={Dashboard} />
                     <Route path="/admin/user/edit" component={EditUser} />
+
+                    <Route path={"/admin/filedocs"} exact component={FiledocsTablePage} />
+                    <Route path={"/admin/filedocs/new"} exact component={FiledocsFormPage} />
+                    <Route path={"/admin/filedocs/:id/edit"} exact component={FiledocsFormPage} />
+                    <Route path={"/admin/filedocs/:id"} exact component={FiledocsViewPage} />
+
+                    <Route path={"/admin/files"} exact component={FilesTablePage} />
+                    <Route path={"/admin/files/new"} exact component={FilesFormPage} />
+                    <Route path={"/admin/files/:id/edit"} exact component={FilesFormPage} />
+                    <Route path={"/admin/files/:id"} exact component={FilesViewPage} />
+
+                    <Route path={"/admin/clients"} exact component={ClientsTablePage} />
+                    <Route path={"/admin/clients/new"} exact component={ClientsFormPage} />
+                    <Route path={"/admin/clients/:id/edit"} exact component={ClientsFormPage} />
+                    <Route path={"/admin/clients/:id"} exact component={ClientsViewPage} />
+
+                    <Route path={"/admin/companys"} exact component={CompanysTablePage} />
+                    <Route path={"/admin/companys/new"} exact component={CompanysFormPage} />
+                    <Route path={"/admin/companys/:id/edit"} exact component={CompanysFormPage} />
+                    <Route path={"/admin/companys/:id"} exact component={CompanysViewPage} />
 
                     <Route path={"/admin/caseserial"} exact component={CaseserialTablePage} />
                     <Route path={"/admin/caseserial/new"} exact component={CaseserialFormPage} />

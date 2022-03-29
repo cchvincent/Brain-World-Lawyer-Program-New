@@ -14,6 +14,14 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/file');
 
+const filedocsRoutes = require('./routes/filedocs');
+
+const filesRoutes = require('./routes/files');
+
+const clientsRoutes = require('./routes/clients');
+
+const companysRoutes = require('./routes/companys');
+
 const caseserialRoutes = require('./routes/caseserial');
 
 const casestatusRoutes = require('./routes/casestatus');
@@ -74,6 +82,14 @@ app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/file', fileRoutes);
+
+app.use('/api/filedocs', passport.authenticate('jwt', {session: false}), filedocsRoutes);
+
+app.use('/api/files', passport.authenticate('jwt', {session: false}), filesRoutes);
+
+app.use('/api/clients', passport.authenticate('jwt', {session: false}), clientsRoutes);
+
+app.use('/api/companys', passport.authenticate('jwt', {session: false}), companysRoutes);
 
 app.use('/api/caseserial', passport.authenticate('jwt', {session: false}), caseserialRoutes);
 

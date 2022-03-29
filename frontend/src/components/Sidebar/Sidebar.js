@@ -110,6 +110,42 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
+            label="Filedocs"
+            link="/admin/filedocs"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Files"
+            link="/admin/files"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Clients"
+            link="/admin/clients"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Companys"
+            link="/admin/companys"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
             label="Caseserial"
             link="/admin/caseserial"
             location={location}

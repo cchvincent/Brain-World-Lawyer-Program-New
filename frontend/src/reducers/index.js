@@ -6,6 +6,14 @@ import layout from 'reducers/layout';
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
+import filedocs from 'reducers/filedocs/filedocsReducers';
+
+import files from 'reducers/files/filesReducers';
+
+import clients from 'reducers/clients/clientsReducers';
+
+import companys from 'reducers/companys/companysReducers';
+
 import caseserial from 'reducers/caseserial/caseserialReducers';
 
 import casestatus from 'reducers/casestatus/casestatusReducers';
@@ -25,6 +33,14 @@ export default (history) =>
     alerts,
     auth,
     navigation,
+
+    filedocs,
+
+    files,
+
+    clients,
+
+    companys,
 
     caseserial,
 
