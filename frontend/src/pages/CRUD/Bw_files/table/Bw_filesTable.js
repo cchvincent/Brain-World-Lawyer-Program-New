@@ -40,8 +40,8 @@ const { SearchBar } = Search;
 
 const Bw_filesTable = () => {
   const [filters, setFilters] = React.useState([
-    {label: 'Doc Box Name', title: 'documentboxname'},{label: 'Ref No', title: 'refno'},{label: 'File Name', title: 'filename'},{label: 'Case No', title: 'caseno'},{label: 'Letter Heading', title: 'letterheading'},{label: 'File Date', title: 'filedate'},{label: 'File Format', title: 'fileformat'},{label: 'File Free Text', title: 'filefreetext'},{label: 'Status', title: 'status'},{label: 'Create By', title: 'createby'},{label: 'Update By', title: 'updateby'},
-    {label: 'Document Box ID', title: 'documentboxid', number: 'true'},{label: 'Year', title: 'year', number: 'true'},{label: 'File Seq', title: 'fileseq', number: 'true'},
+    {label: 'File Name', title: 'casefilename'},{label: 'Doc Box Name', title: 'documentboxname'},{label: 'Ref No', title: 'refno'},{label: 'Case No', title: 'caseno'},{label: 'Letter Heading', title: 'letterheading'},{label: 'File Date', title: 'filedate'},{label: 'File Format', title: 'fileformat'},{label: 'File Free Text', title: 'filefreetext'},{label: 'Status', title: 'status'},{label: 'Create By', title: 'createby'},{label: 'Update By', title: 'updateby'},
+    {label: 'Year', title: 'caseyear', number: 'true'},{label: 'Document Box ID', title: 'documentboxid', number: 'true'},{label: 'File Seq', title: 'fileseq', number: 'true'},
 
   ]);
   const [filterItems, setFilterItems] = React.useState([]);
@@ -94,6 +94,18 @@ const Bw_filesTable = () => {
 
         const columns = [
 
+{ dataField: "casefilename",
+sort: true,
+
+text: "File Name"
+},
+
+{ dataField: "caseyear",
+sort: true,
+
+text: "Year"
+},
+
 { dataField: "documentboxid",
 sort: true,
 
@@ -110,18 +122,6 @@ text: "Doc Box Name"
 sort: true,
 
 text: "Ref No"
-},
-
-{ dataField: "filename",
-sort: true,
-
-text: "File Name"
-},
-
-{ dataField: "year",
-sort: true,
-
-text: "Year"
 },
 
 { dataField: "caseno",

@@ -2,6 +2,14 @@
 const bw_filesFields = {
 	id: { type: 'id', label: 'ID' },
 
+    casefilename: { type: 'string', label: 'File Name',
+
+    },
+
+    caseyear: { type: 'int', label: 'Year',
+
+    },
+
     documentboxid: { type: 'int', label: 'Document Box ID',
 
     },
@@ -11,14 +19,6 @@ const bw_filesFields = {
     },
 
     refno: { type: 'string', label: 'Ref No',
-
-    },
-
-    filename: { type: 'string', label: 'File Name',
-
-    },
-
-    year: { type: 'int', label: 'Year',
 
     },
 

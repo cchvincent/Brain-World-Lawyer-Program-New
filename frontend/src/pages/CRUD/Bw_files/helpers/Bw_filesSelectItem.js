@@ -21,7 +21,7 @@ const Bw_filesSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label ? originalValue.label : originalValue.documentboxid;
+      let label = originalValue.label ? originalValue.label : originalValue.casefilename;
 
       return {
         key: value,

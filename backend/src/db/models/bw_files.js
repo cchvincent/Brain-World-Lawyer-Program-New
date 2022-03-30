@@ -14,6 +14,16 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true,
       },
 
+casefilename: {
+        type: DataTypes.TEXT,
+
+      },
+
+caseyear: {
+        type: DataTypes.INTEGER,
+
+      },
+
 documentboxid: {
         type: DataTypes.INTEGER,
 
@@ -26,16 +36,6 @@ documentboxname: {
 
 refno: {
         type: DataTypes.TEXT,
-
-      },
-
-filename: {
-        type: DataTypes.TEXT,
-
-      },
-
-year: {
-        type: DataTypes.INTEGER,
 
       },
 

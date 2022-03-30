@@ -17,6 +17,16 @@ module.exports = class Bw_filesDBApi {
   {
   id: data.id || undefined,
 
+    casefilename: data.casefilename
+    ||
+    null
+,
+
+    caseyear: data.caseyear
+    ||
+    null
+,
+
     documentboxid: data.documentboxid
     ||
     null
@@ -28,16 +38,6 @@ module.exports = class Bw_filesDBApi {
 ,
 
     refno: data.refno
-    ||
-    null
-,
-
-    filename: data.filename
-    ||
-    null
-,
-
-    year: data.year
     ||
     null
 ,
@@ -118,6 +118,16 @@ module.exports = class Bw_filesDBApi {
     await bw_files.update(
       {
 
+        casefilename: data.casefilename
+        ||
+        null
+,
+
+        caseyear: data.caseyear
+        ||
+        null
+,
+
         documentboxid: data.documentboxid
         ||
         null
@@ -129,16 +139,6 @@ module.exports = class Bw_filesDBApi {
 ,
 
         refno: data.refno
-        ||
-        null
-,
-
-        filename: data.filename
-        ||
-        null
-,
-
-        year: data.year
         ||
         null
 ,
@@ -265,6 +265,17 @@ module.exports = class Bw_filesDBApi {
         };
       }
 
+      if (filter.casefilename) {
+        where = {
+          ...where,
+          [Op.and]: Utils.ilike(
+            'bw_files',
+            'casefilename',
+            filter.casefilename,
+          ),
+        };
+      }
+
       if (filter.documentboxname) {
         where = {
           ...where,
@@ -283,17 +294,6 @@ module.exports = class Bw_filesDBApi {
             'bw_files',
             'refno',
             filter.refno,
-          ),
-        };
-      }
-
-      if (filter.filename) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_files',
-            'filename',
-            filter.filename,
           ),
         };
       }
@@ -386,6 +386,30 @@ module.exports = class Bw_filesDBApi {
         };
       }
 
+      if (filter.caseyearRange) {
+        const [start, end] = filter.caseyearRange;
+
+        if (start !== undefined && start !== null && start !== '') {
+          where = {
+            ...where,
+            caseyear: {
+              ...where.caseyear,
+              [Op.gte]: start,
+            },
+          };
+        }
+
+        if (end !== undefined && end !== null && end !== '') {
+          where = {
+            ...where,
+            caseyear: {
+              ...where.caseyear,
+              [Op.lte]: end,
+            },
+          };
+        }
+      }
+
       if (filter.documentboxidRange) {
         const [start, end] = filter.documentboxidRange;
 
@@ -404,30 +428,6 @@ module.exports = class Bw_filesDBApi {
             ...where,
             documentboxid: {
               ...where.documentboxid,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.yearRange) {
-        const [start, end] = filter.yearRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            year: {
-              ...where.year,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            year: {
-              ...where.year,
               [Op.lte]: end,
             },
           };
@@ -575,7 +575,7 @@ module.exports = class Bw_filesDBApi {
           { ['id']: Utils.uuid(query) },
           Utils.ilike(
             'bw_files',
-            'documentboxid',
+            'casefilename',
             query,
           ),
         ],
@@ -583,15 +583,15 @@ module.exports = class Bw_filesDBApi {
     }
 
     const records = await db.bw_files.findAll({
-      attributes: [ 'id', 'documentboxid' ],
+      attributes: [ 'id', 'casefilename' ],
       where,
       limit: limit ? Number(limit) : undefined,
-      orderBy: [['documentboxid', 'ASC']],
+      orderBy: [['casefilename', 'ASC']],
     });
 
     return records.map((record) => ({
       id: record.id,
-      label: record.documentboxid,
+      label: record.casefilename,
     }));
   }
 

@@ -73,6 +73,19 @@ const Bw_filesForm = (props) => {
   {(form) => (
   <form onSubmit={form.handleSubmit}>
 
+      <InputFormItem
+              name={'casefilename'}
+      schema={bw_filesFields}
+
+        autoFocus
+
+      />
+
+      <InputNumberFormItem
+              name={'caseyear'}
+      schema={bw_filesFields}
+      />
+
       <InputNumberFormItem
               name={'documentboxid'}
       schema={bw_filesFields}
@@ -88,17 +101,6 @@ const Bw_filesForm = (props) => {
               name={'refno'}
       schema={bw_filesFields}
 
-      />
-
-      <InputFormItem
-              name={'filename'}
-      schema={bw_filesFields}
-
-      />
-
-      <InputNumberFormItem
-              name={'year'}
-      schema={bw_filesFields}
       />
 
       <InputFormItem

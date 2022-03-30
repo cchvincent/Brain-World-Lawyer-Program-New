@@ -57,14 +57,14 @@ function listFormatter(cell) {
               <a
                 href={value.id}
               >
-                {value.documentboxid}
+                {value.casefilename}
               </a>
             </div>
           );
         })}
         { cell &&
             <div key={cell.id}>
-              <a href={cell.id}>{cell.documentboxid}</a>
+              <a href={cell.id}>{cell.casefilename}</a>
             </div>
         }
       </div>

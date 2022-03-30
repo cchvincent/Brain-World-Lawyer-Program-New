@@ -15,15 +15,15 @@ const router = express.Router();
  *        type: object
  *        properties:
 
+ *          casefilename:
+ *            type: string
+ *            default: casefilename
  *          documentboxname:
  *            type: string
  *            default: documentboxname
  *          refno:
  *            type: string
  *            default: refno
- *          filename:
- *            type: string
- *            default: filename
  *          caseno:
  *            type: string
  *            default: caseno
@@ -49,10 +49,10 @@ const router = express.Router();
  *            type: string
  *            default: updateby
 
- *          documentboxid:
+ *          caseyear:
  *            type: integer
  *            format: int64
- *          year:
+ *          documentboxid:
  *            type: integer
  *            format: int64
  *          fileseq:
