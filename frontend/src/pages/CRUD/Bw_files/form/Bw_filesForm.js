@@ -115,18 +115,6 @@ const Bw_filesForm = (props) => {
 
       />
 
-      <InputFormItem
-              name={'filedate'}
-      schema={bw_filesFields}
-
-      />
-
-      <InputFormItem
-              name={'fileformat'}
-      schema={bw_filesFields}
-
-      />
-
       <TextAreaFormItem
               name={'filefreetext'}
       schema={bw_filesFields}

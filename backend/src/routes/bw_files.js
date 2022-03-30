@@ -30,12 +30,6 @@ const router = express.Router();
  *          letterheading:
  *            type: string
  *            default: letterheading
- *          filedate:
- *            type: string
- *            default: filedate
- *          fileformat:
- *            type: string
- *            default: fileformat
  *          filefreetext:
  *            type: string
  *            default: filefreetext

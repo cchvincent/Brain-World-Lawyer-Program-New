@@ -40,7 +40,7 @@ const { SearchBar } = Search;
 
 const Bw_filesTable = () => {
   const [filters, setFilters] = React.useState([
-    {label: 'File Name', title: 'casefilename'},{label: 'Doc Box Name', title: 'documentboxname'},{label: 'Ref No', title: 'refno'},{label: 'Case No', title: 'caseno'},{label: 'Letter Heading', title: 'letterheading'},{label: 'File Date', title: 'filedate'},{label: 'File Format', title: 'fileformat'},{label: 'File Free Text', title: 'filefreetext'},{label: 'Status', title: 'status'},{label: 'Create By', title: 'createby'},{label: 'Update By', title: 'updateby'},
+    {label: 'File Name', title: 'casefilename'},{label: 'Doc Box Name', title: 'documentboxname'},{label: 'Ref No', title: 'refno'},{label: 'Case No', title: 'caseno'},{label: 'Letter Heading', title: 'letterheading'},{label: 'File Free Text', title: 'filefreetext'},{label: 'Status', title: 'status'},{label: 'Create By', title: 'createby'},{label: 'Update By', title: 'updateby'},
     {label: 'Year', title: 'caseyear', number: 'true'},{label: 'Document Box ID', title: 'documentboxid', number: 'true'},{label: 'File Seq', title: 'fileseq', number: 'true'},
 
   ]);
@@ -134,18 +134,6 @@ text: "Case No"
 sort: true,
 
 text: "Letter Heading"
-},
-
-{ dataField: "filedate",
-sort: true,
-
-text: "File Date"
-},
-
-{ dataField: "fileformat",
-sort: true,
-
-text: "File Format"
 },
 
 { dataField: "filefreetext",

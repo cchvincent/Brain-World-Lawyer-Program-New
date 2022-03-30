@@ -52,16 +52,6 @@ module.exports = class Bw_filesDBApi {
     null
 ,
 
-    filedate: data.filedate
-    ||
-    null
-,
-
-    fileformat: data.fileformat
-    ||
-    null
-,
-
     filefreetext: data.filefreetext
     ||
     null
@@ -149,16 +139,6 @@ module.exports = class Bw_filesDBApi {
 ,
 
         letterheading: data.letterheading
-        ||
-        null
-,
-
-        filedate: data.filedate
-        ||
-        null
-,
-
-        fileformat: data.fileformat
         ||
         null
 ,
@@ -316,28 +296,6 @@ module.exports = class Bw_filesDBApi {
             'bw_files',
             'letterheading',
             filter.letterheading,
-          ),
-        };
-      }
-
-      if (filter.filedate) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_files',
-            'filedate',
-            filter.filedate,
-          ),
-        };
-      }
-
-      if (filter.fileformat) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_files',
-            'fileformat',
-            filter.fileformat,
           ),
         };
       }

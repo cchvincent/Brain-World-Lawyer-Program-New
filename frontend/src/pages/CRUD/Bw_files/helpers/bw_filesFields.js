@@ -30,14 +30,6 @@ const bw_filesFields = {
 
     },
 
-    filedate: { type: 'string', label: 'File Date',
-
-    },
-
-    fileformat: { type: 'string', label: 'File Format',
-
-    },
-
     filefreetext: { type: 'string', label: 'File Free Text',
 
     },

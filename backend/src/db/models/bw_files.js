@@ -49,16 +49,6 @@ letterheading: {
 
       },
 
-filedate: {
-        type: DataTypes.TEXT,
-
-      },
-
-fileformat: {
-        type: DataTypes.TEXT,
-
-      },
-
 filefreetext: {
         type: DataTypes.TEXT,
 
