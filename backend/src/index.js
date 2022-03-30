@@ -14,7 +14,27 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/file');
 
-const bw_filesRoutes = require('./routes/bw_files');
+const handlersRoutes = require('./routes/handlers');
+
+const introducersRoutes = require('./routes/introducers');
+
+const letterheadingRoutes = require('./routes/letterheading');
+
+const officesRoutes = require('./routes/offices');
+
+const progressRoutes = require('./routes/progress');
+
+const refnofilesseqRoutes = require('./routes/refnofilesseq');
+
+const rolesRoutes = require('./routes/roles');
+
+const staffsRoutes = require('./routes/staffs');
+
+const supervisorsRoutes = require('./routes/supervisors');
+
+const usersrolesRoutes = require('./routes/usersroles');
+
+const bw_casefilesRoutes = require('./routes/bw_casefiles');
 
 const bw_filedocsRoutes = require('./routes/bw_filedocs');
 
@@ -83,7 +103,27 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/file', fileRoutes);
 
-app.use('/api/bw_files', passport.authenticate('jwt', {session: false}), bw_filesRoutes);
+app.use('/api/handlers', passport.authenticate('jwt', {session: false}), handlersRoutes);
+
+app.use('/api/introducers', passport.authenticate('jwt', {session: false}), introducersRoutes);
+
+app.use('/api/letterheading', passport.authenticate('jwt', {session: false}), letterheadingRoutes);
+
+app.use('/api/offices', passport.authenticate('jwt', {session: false}), officesRoutes);
+
+app.use('/api/progress', passport.authenticate('jwt', {session: false}), progressRoutes);
+
+app.use('/api/refnofilesseq', passport.authenticate('jwt', {session: false}), refnofilesseqRoutes);
+
+app.use('/api/roles', passport.authenticate('jwt', {session: false}), rolesRoutes);
+
+app.use('/api/staffs', passport.authenticate('jwt', {session: false}), staffsRoutes);
+
+app.use('/api/supervisors', passport.authenticate('jwt', {session: false}), supervisorsRoutes);
+
+app.use('/api/usersroles', passport.authenticate('jwt', {session: false}), usersrolesRoutes);
+
+app.use('/api/bw_casefiles', passport.authenticate('jwt', {session: false}), bw_casefilesRoutes);
 
 app.use('/api/bw_filedocs', passport.authenticate('jwt', {session: false}), bw_filedocsRoutes);
 

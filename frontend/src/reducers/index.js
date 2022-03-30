@@ -6,7 +6,27 @@ import layout from 'reducers/layout';
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-import bw_files from 'reducers/bw_files/bw_filesReducers';
+import handlers from 'reducers/handlers/handlersReducers';
+
+import introducers from 'reducers/introducers/introducersReducers';
+
+import letterheading from 'reducers/letterheading/letterheadingReducers';
+
+import offices from 'reducers/offices/officesReducers';
+
+import progress from 'reducers/progress/progressReducers';
+
+import refnofilesseq from 'reducers/refnofilesseq/refnofilesseqReducers';
+
+import roles from 'reducers/roles/rolesReducers';
+
+import staffs from 'reducers/staffs/staffsReducers';
+
+import supervisors from 'reducers/supervisors/supervisorsReducers';
+
+import usersroles from 'reducers/usersroles/usersrolesReducers';
+
+import bw_casefiles from 'reducers/bw_casefiles/bw_casefilesReducers';
 
 import bw_filedocs from 'reducers/bw_filedocs/bw_filedocsReducers';
 
@@ -34,7 +54,27 @@ export default (history) =>
     auth,
     navigation,
 
-    bw_files,
+    handlers,
+
+    introducers,
+
+    letterheading,
+
+    offices,
+
+    progress,
+
+    refnofilesseq,
+
+    roles,
+
+    staffs,
+
+    supervisors,
+
+    usersroles,
+
+    bw_casefiles,
 
     bw_filedocs,
 

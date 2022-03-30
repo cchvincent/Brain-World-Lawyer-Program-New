@@ -110,8 +110,98 @@ function Sidebar({ location, structure }) {
           />
 
           <SidebarLink
-            label="Bw_files"
-            link="/admin/bw_files"
+            label="Handlers"
+            link="/admin/handlers"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Introducers"
+            link="/admin/introducers"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Letterheading"
+            link="/admin/letterheading"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Offices"
+            link="/admin/offices"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Progress"
+            link="/admin/progress"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Refnofilesseq"
+            link="/admin/refnofilesseq"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Roles"
+            link="/admin/roles"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Staffs"
+            link="/admin/staffs"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Supervisors"
+            link="/admin/supervisors"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Usersroles"
+            link="/admin/usersroles"
+            location={location}
+            isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
+            icon={<CoreIcon />}
+            toggleDrawer={toggleDrawer(true)}
+          />
+
+          <SidebarLink
+            label="Bw_casefiles"
+            link="/admin/bw_casefiles"
             location={location}
             isSidebarOpened={!isPermanent ? !isSidebarOpened : isSidebarOpened}
             icon={<CoreIcon />}
