@@ -17,17 +17,17 @@ module.exports = class Bw_progressDBApi {
   {
   id: data.id || undefined,
 
-    progresstypes: data.progresstypes
-    ||
-    null
-,
-
     desc_en: data.desc_en
     ||
     null
 ,
 
     desc_ch: data.desc_ch
+    ||
+    null
+,
+
+    progresstypes: data.progresstypes
     ||
     null
 ,
@@ -78,17 +78,17 @@ module.exports = class Bw_progressDBApi {
     await bw_progress.update(
       {
 
-        progresstypes: data.progresstypes
-        ||
-        null
-,
-
         desc_en: data.desc_en
         ||
         null
 ,
 
         desc_ch: data.desc_ch
+        ||
+        null
+,
+
+        progresstypes: data.progresstypes
         ||
         null
 ,
@@ -381,7 +381,7 @@ module.exports = class Bw_progressDBApi {
           { ['id']: Utils.uuid(query) },
           Utils.ilike(
             'bw_progress',
-            'progresstypes',
+            'desc_en',
             query,
           ),
         ],
@@ -389,15 +389,15 @@ module.exports = class Bw_progressDBApi {
     }
 
     const records = await db.bw_progress.findAll({
-      attributes: [ 'id', 'progresstypes' ],
+      attributes: [ 'id', 'desc_en' ],
       where,
       limit: limit ? Number(limit) : undefined,
-      orderBy: [['progresstypes', 'ASC']],
+      orderBy: [['desc_en', 'ASC']],
     });
 
     return records.map((record) => ({
       id: record.id,
-      label: record.progresstypes,
+      label: record.desc_en,
     }));
   }
 

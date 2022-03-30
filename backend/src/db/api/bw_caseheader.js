@@ -17,6 +17,56 @@ module.exports = class Bw_caseheaderDBApi {
   {
   id: data.id || undefined,
 
+    timebar: data.timebar
+    ||
+    null
+,
+
+    conflictcheck: data.conflictcheck
+    ||
+    null
+,
+
+    clientcheck: data.clientcheck
+    ||
+    null
+,
+
+    moneylaundrycompliance: data.moneylaundrycompliance
+    ||
+    null
+,
+
+    workaccident: data.workaccident
+    ||
+    null
+,
+
+    liabilityadmitted: data.liabilityadmitted
+    ||
+    null
+,
+
+    approvalstatus: data.approvalstatus
+    ||
+    null
+,
+
+    dla: data.dla
+    ||
+    null
+,
+
+    createdate: data.createdate
+    ||
+    null
+,
+
+    updatedate: data.updatedate
+    ||
+    null
+,
+
     refno: data.refno
     ||
     null
@@ -37,77 +87,12 @@ module.exports = class Bw_caseheaderDBApi {
     null
 ,
 
-    timebar: data.timebar
-    ||
-    null
-,
-
-    introducers: data.introducers
-    ||
-    null
-,
-
     yearofcreation: data.yearofcreation
     ||
     null
 ,
 
     caseno: data.caseno
-    ||
-    null
-,
-
-    handlers: data.handlers
-    ||
-    null
-,
-
-    supervisors: data.supervisors
-    ||
-    null
-,
-
-    staffs: data.staffs
-    ||
-    null
-,
-
-    dla: data.dla
-    ||
-    null
-,
-
-    conflictcheck: data.conflictcheck
-    ||
-    null
-,
-
-    clientcheck: data.clientcheck
-    ||
-    null
-,
-
-    moneylaundrycompliance: data.moneylaundrycompliance
-    ||
-    null
-,
-
-    status: data.status
-    ||
-    null
-,
-
-    caseprogress: data.caseprogress
-    ||
-    null
-,
-
-    workaccident: data.workaccident
-    ||
-    null
-,
-
-    liabilityadmitted: data.liabilityadmitted
     ||
     null
 ,
@@ -122,37 +107,28 @@ module.exports = class Bw_caseheaderDBApi {
     null
 ,
 
-    approvalstatus: data.approvalstatus
-    ||
-    null
-,
-
-    createdate: data.createdate
-    ||
-    null
-,
-
-    createby: data.createby
-    ||
-    null
-,
-
-    updatedate: data.updatedate
-    ||
-    null
-,
-
-    updateby: data.updateby
-    ||
-    null
-,
-
   importHash: data.importHash || null,
   createdById: currentUser.id,
   updatedById: currentUser.id,
   },
   { transaction },
   );
+
+    await bw_caseheader.setCaseprogress(data.caseprogress || null, {
+    transaction,
+    });
+
+    await bw_caseheader.setStatus(data.status || null, {
+    transaction,
+    });
+
+    await bw_caseheader.setCreateby(data.createby || null, {
+    transaction,
+    });
+
+    await bw_caseheader.setUpdateby(data.updateby || null, {
+    transaction,
+    });
 
     await bw_caseheader.setCasetypesid(data.casetypesid || null, {
     transaction,
@@ -170,6 +146,22 @@ module.exports = class Bw_caseheaderDBApi {
     transaction,
     });
 
+    await bw_caseheader.setIntroducers(data.introducers || [], {
+    transaction,
+    });
+
+    await bw_caseheader.setHandlers(data.handlers || [], {
+    transaction,
+    });
+
+    await bw_caseheader.setSupervisors(data.supervisors || [], {
+    transaction,
+    });
+
+    await bw_caseheader.setStaffs(data.staffs || [], {
+    transaction,
+    });
+
   return bw_caseheader;
   }
 
@@ -183,6 +175,56 @@ module.exports = class Bw_caseheaderDBApi {
 
     await bw_caseheader.update(
       {
+
+        timebar: data.timebar
+        ||
+        null
+,
+
+        conflictcheck: data.conflictcheck
+        ||
+        null
+,
+
+        clientcheck: data.clientcheck
+        ||
+        null
+,
+
+        moneylaundrycompliance: data.moneylaundrycompliance
+        ||
+        null
+,
+
+        workaccident: data.workaccident
+        ||
+        null
+,
+
+        liabilityadmitted: data.liabilityadmitted
+        ||
+        null
+,
+
+        approvalstatus: data.approvalstatus
+        ||
+        null
+,
+
+        dla: data.dla
+        ||
+        null
+,
+
+        createdate: data.createdate
+        ||
+        null
+,
+
+        updatedate: data.updatedate
+        ||
+        null
+,
 
         refno: data.refno
         ||
@@ -204,77 +246,12 @@ module.exports = class Bw_caseheaderDBApi {
         null
 ,
 
-        timebar: data.timebar
-        ||
-        null
-,
-
-        introducers: data.introducers
-        ||
-        null
-,
-
         yearofcreation: data.yearofcreation
         ||
         null
 ,
 
         caseno: data.caseno
-        ||
-        null
-,
-
-        handlers: data.handlers
-        ||
-        null
-,
-
-        supervisors: data.supervisors
-        ||
-        null
-,
-
-        staffs: data.staffs
-        ||
-        null
-,
-
-        dla: data.dla
-        ||
-        null
-,
-
-        conflictcheck: data.conflictcheck
-        ||
-        null
-,
-
-        clientcheck: data.clientcheck
-        ||
-        null
-,
-
-        moneylaundrycompliance: data.moneylaundrycompliance
-        ||
-        null
-,
-
-        status: data.status
-        ||
-        null
-,
-
-        caseprogress: data.caseprogress
-        ||
-        null
-,
-
-        workaccident: data.workaccident
-        ||
-        null
-,
-
-        liabilityadmitted: data.liabilityadmitted
         ||
         null
 ,
@@ -289,35 +266,26 @@ module.exports = class Bw_caseheaderDBApi {
         null
 ,
 
-        approvalstatus: data.approvalstatus
-        ||
-        null
-,
-
-        createdate: data.createdate
-        ||
-        null
-,
-
-        createby: data.createby
-        ||
-        null
-,
-
-        updatedate: data.updatedate
-        ||
-        null
-,
-
-        updateby: data.updateby
-        ||
-        null
-,
-
         updatedById: currentUser.id,
       },
       {transaction},
     );
+
+    await bw_caseheader.setCaseprogress(data.caseprogress || null, {
+      transaction,
+    });
+
+    await bw_caseheader.setStatus(data.status || null, {
+      transaction,
+    });
+
+    await bw_caseheader.setCreateby(data.createby || null, {
+      transaction,
+    });
+
+    await bw_caseheader.setUpdateby(data.updateby || null, {
+      transaction,
+    });
 
     await bw_caseheader.setCasetypesid(data.casetypesid || null, {
       transaction,
@@ -332,6 +300,22 @@ module.exports = class Bw_caseheaderDBApi {
     });
 
     await bw_caseheader.setClientid(data.clientid || null, {
+      transaction,
+    });
+
+    await bw_caseheader.setIntroducers(data.introducers || [], {
+      transaction,
+    });
+
+    await bw_caseheader.setHandlers(data.handlers || [], {
+      transaction,
+    });
+
+    await bw_caseheader.setSupervisors(data.supervisors || [], {
+      transaction,
+    });
+
+    await bw_caseheader.setStaffs(data.staffs || [], {
       transaction,
     });
 
@@ -371,6 +355,38 @@ module.exports = class Bw_caseheaderDBApi {
 
     const output = bw_caseheader.get({plain: true});
 
+    output.introducers = await bw_caseheader.getIntroducers({
+      transaction
+    });
+
+    output.handlers = await bw_caseheader.getHandlers({
+      transaction
+    });
+
+    output.supervisors = await bw_caseheader.getSupervisors({
+      transaction
+    });
+
+    output.staffs = await bw_caseheader.getStaffs({
+      transaction
+    });
+
+    output.caseprogress = await bw_caseheader.getCaseprogress({
+      transaction
+    });
+
+    output.status = await bw_caseheader.getStatus({
+      transaction
+    });
+
+    output.createby = await bw_caseheader.getCreateby({
+      transaction
+    });
+
+    output.updateby = await bw_caseheader.getUpdateby({
+      transaction
+    });
+
     output.casetypesid = await bw_caseheader.getCasetypesid({
       transaction
     });
@@ -404,6 +420,26 @@ module.exports = class Bw_caseheaderDBApi {
     let include = [
 
       {
+        model: db.bw_progress,
+        as: 'caseprogress',
+      },
+
+      {
+        model: db.bw_casestatus,
+        as: 'status',
+      },
+
+      {
+        model: db.users,
+        as: 'createby',
+      },
+
+      {
+        model: db.users,
+        as: 'updateby',
+      },
+
+      {
         model: db.bw_casetypes,
         as: 'casetypesid',
       },
@@ -421,6 +457,50 @@ module.exports = class Bw_caseheaderDBApi {
       {
         model: db.bw_clients,
         as: 'clientid',
+      },
+
+      {
+        model: db.bw_introducers,
+        as: 'introducers',
+        through: filter.introducers ? { where: {
+          [Op.or]: filter.introducers.split('|').map(item => {
+            return { ['Id']: Utils.uuid(item) }
+          })
+        }} : null,
+        required: filter.introducers ? true : null,
+      },
+
+      {
+        model: db.bw_handlers,
+        as: 'handlers',
+        through: filter.handlers ? { where: {
+          [Op.or]: filter.handlers.split('|').map(item => {
+            return { ['Id']: Utils.uuid(item) }
+          })
+        }} : null,
+        required: filter.handlers ? true : null,
+      },
+
+      {
+        model: db.bw_supervisors,
+        as: 'supervisors',
+        through: filter.supervisors ? { where: {
+          [Op.or]: filter.supervisors.split('|').map(item => {
+            return { ['Id']: Utils.uuid(item) }
+          })
+        }} : null,
+        required: filter.supervisors ? true : null,
+      },
+
+      {
+        model: db.bw_staffs,
+        as: 'staffs',
+        through: filter.staffs ? { where: {
+          [Op.or]: filter.staffs.split('|').map(item => {
+            return { ['Id']: Utils.uuid(item) }
+          })
+        }} : null,
+        required: filter.staffs ? true : null,
       },
 
     ];
@@ -466,28 +546,6 @@ module.exports = class Bw_caseheaderDBApi {
         };
       }
 
-      if (filter.timebar) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'timebar',
-            filter.timebar,
-          ),
-        };
-      }
-
-      if (filter.introducers) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'introducers',
-            filter.introducers,
-          ),
-        };
-      }
-
       if (filter.yearofcreation) {
         where = {
           ...where,
@@ -506,72 +564,6 @@ module.exports = class Bw_caseheaderDBApi {
             'bw_caseheader',
             'caseno',
             filter.caseno,
-          ),
-        };
-      }
-
-      if (filter.handlers) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'handlers',
-            filter.handlers,
-          ),
-        };
-      }
-
-      if (filter.supervisors) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'supervisors',
-            filter.supervisors,
-          ),
-        };
-      }
-
-      if (filter.staffs) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'staffs',
-            filter.staffs,
-          ),
-        };
-      }
-
-      if (filter.dla) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'dla',
-            filter.dla,
-          ),
-        };
-      }
-
-      if (filter.moneylaundrycompliance) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'moneylaundrycompliance',
-            filter.moneylaundrycompliance,
-          ),
-        };
-      }
-
-      if (filter.status) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'status',
-            filter.status,
           ),
         };
       }
@@ -598,36 +590,14 @@ module.exports = class Bw_caseheaderDBApi {
         };
       }
 
-      if (filter.createby) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'createby',
-            filter.createby,
-          ),
-        };
-      }
-
-      if (filter.updateby) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'bw_caseheader',
-            'updateby',
-            filter.updateby,
-          ),
-        };
-      }
-
-      if (filter.dateofaccidentRange) {
-        const [start, end] = filter.dateofaccidentRange;
+      if (filter.timebarRange) {
+        const [start, end] = filter.timebarRange;
 
         if (start !== undefined && start !== null && start !== '') {
           where = {
             ...where,
-            dateofaccident: {
-              ...where.dateofaccident,
+            timebar: {
+              ...where.timebar,
               [Op.gte]: start,
             },
           };
@@ -636,152 +606,8 @@ module.exports = class Bw_caseheaderDBApi {
         if (end !== undefined && end !== null && end !== '') {
           where = {
             ...where,
-            dateofaccident: {
-              ...where.dateofaccident,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.conflictcheckRange) {
-        const [start, end] = filter.conflictcheckRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            conflictcheck: {
-              ...where.conflictcheck,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            conflictcheck: {
-              ...where.conflictcheck,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.clientcheckRange) {
-        const [start, end] = filter.clientcheckRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            clientcheck: {
-              ...where.clientcheck,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            clientcheck: {
-              ...where.clientcheck,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.caseprogressRange) {
-        const [start, end] = filter.caseprogressRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            caseprogress: {
-              ...where.caseprogress,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            caseprogress: {
-              ...where.caseprogress,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.workaccidentRange) {
-        const [start, end] = filter.workaccidentRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            workaccident: {
-              ...where.workaccident,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            workaccident: {
-              ...where.workaccident,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.liabilityadmittedRange) {
-        const [start, end] = filter.liabilityadmittedRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            liabilityadmitted: {
-              ...where.liabilityadmitted,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            liabilityadmitted: {
-              ...where.liabilityadmitted,
-              [Op.lte]: end,
-            },
-          };
-        }
-      }
-
-      if (filter.approvalstatusRange) {
-        const [start, end] = filter.approvalstatusRange;
-
-        if (start !== undefined && start !== null && start !== '') {
-          where = {
-            ...where,
-            approvalstatus: {
-              ...where.approvalstatus,
-              [Op.gte]: start,
-            },
-          };
-        }
-
-        if (end !== undefined && end !== null && end !== '') {
-          where = {
-            ...where,
-            approvalstatus: {
-              ...where.approvalstatus,
+            timebar: {
+              ...where.timebar,
               [Op.lte]: end,
             },
           };
@@ -836,6 +662,30 @@ module.exports = class Bw_caseheaderDBApi {
         }
       }
 
+      if (filter.dateofaccidentRange) {
+        const [start, end] = filter.dateofaccidentRange;
+
+        if (start !== undefined && start !== null && start !== '') {
+          where = {
+            ...where,
+            dateofaccident: {
+              ...where.dateofaccident,
+              [Op.gte]: start,
+            },
+          };
+        }
+
+        if (end !== undefined && end !== null && end !== '') {
+          where = {
+            ...where,
+            dateofaccident: {
+              ...where.dateofaccident,
+              [Op.lte]: end,
+            },
+          };
+        }
+      }
+
       if (
         filter.active === true ||
         filter.active === 'true' ||
@@ -847,6 +697,99 @@ module.exports = class Bw_caseheaderDBApi {
           active:
             filter.active === true ||
             filter.active === 'true',
+        };
+      }
+
+      if (filter.conflictcheck) {
+        where = {
+          ...where,
+          conflictcheck: filter.conflictcheck,
+        };
+      }
+
+      if (filter.clientcheck) {
+        where = {
+          ...where,
+          clientcheck: filter.clientcheck,
+        };
+      }
+
+      if (filter.moneylaundrycompliance) {
+        where = {
+          ...where,
+          moneylaundrycompliance: filter.moneylaundrycompliance,
+        };
+      }
+
+      if (filter.workaccident) {
+        where = {
+          ...where,
+          workaccident: filter.workaccident,
+        };
+      }
+
+      if (filter.liabilityadmitted) {
+        where = {
+          ...where,
+          liabilityadmitted: filter.liabilityadmitted,
+        };
+      }
+
+      if (filter.approvalstatus) {
+        where = {
+          ...where,
+          approvalstatus: filter.approvalstatus,
+        };
+      }
+
+      if (filter.dla) {
+        where = {
+          ...where,
+          dla: filter.dla,
+        };
+      }
+
+      if (filter.caseprogress) {
+        var listItems = filter.caseprogress.split('|').map(item => {
+          return  Utils.uuid(item)
+        });
+
+        where = {
+          ...where,
+          caseprogressId: {[Op.or]: listItems}
+        };
+      }
+
+      if (filter.status) {
+        var listItems = filter.status.split('|').map(item => {
+          return  Utils.uuid(item)
+        });
+
+        where = {
+          ...where,
+          statusId: {[Op.or]: listItems}
+        };
+      }
+
+      if (filter.createby) {
+        var listItems = filter.createby.split('|').map(item => {
+          return  Utils.uuid(item)
+        });
+
+        where = {
+          ...where,
+          createbyId: {[Op.or]: listItems}
+        };
+      }
+
+      if (filter.updateby) {
+        var listItems = filter.updateby.split('|').map(item => {
+          return  Utils.uuid(item)
+        });
+
+        where = {
+          ...where,
+          updatebyId: {[Op.or]: listItems}
         };
       }
 
@@ -949,7 +892,7 @@ module.exports = class Bw_caseheaderDBApi {
           { ['id']: Utils.uuid(query) },
           Utils.ilike(
             'bw_caseheader',
-            'casetypesid',
+            'timebar',
             query,
           ),
         ],
@@ -957,15 +900,15 @@ module.exports = class Bw_caseheaderDBApi {
     }
 
     const records = await db.bw_caseheader.findAll({
-      attributes: [ 'id', 'casetypesid' ],
+      attributes: [ 'id', 'timebar' ],
       where,
       limit: limit ? Number(limit) : undefined,
-      orderBy: [['casetypesid', 'ASC']],
+      orderBy: [['timebar', 'ASC']],
     });
 
     return records.map((record) => ({
       id: record.id,
-      label: record.casetypesid,
+      label: record.timebar,
     }));
   }
 

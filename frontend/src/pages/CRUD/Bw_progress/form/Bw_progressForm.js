@@ -73,14 +73,11 @@ const Bw_progressForm = (props) => {
   {(form) => (
   <form onSubmit={form.handleSubmit}>
 
-      <InputNumberFormItem
-              name={'progresstypes'}
-      schema={bw_progressFields}
-      />
-
       <InputFormItem
               name={'desc_en'}
       schema={bw_progressFields}
+
+        autoFocus
 
       />
 
@@ -88,6 +85,11 @@ const Bw_progressForm = (props) => {
               name={'desc_ch'}
       schema={bw_progressFields}
 
+      />
+
+      <InputNumberFormItem
+              name={'progresstypes'}
+      schema={bw_progressFields}
       />
 
       <InputFormItem

@@ -21,7 +21,7 @@ const Bw_progressSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label ? originalValue.label : originalValue.progresstypes;
+      let label = originalValue.label ? originalValue.label : originalValue.desc_en;
 
       return {
         key: value,

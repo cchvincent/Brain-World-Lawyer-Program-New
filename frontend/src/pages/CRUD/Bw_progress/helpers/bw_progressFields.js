@@ -2,15 +2,15 @@
 const bw_progressFields = {
 	id: { type: 'id', label: 'ID' },
 
-    progresstypes: { type: 'int', label: 'Progress Types',
-
-    },
-
     desc_en: { type: 'string', label: 'Description (EN)',
 
     },
 
     desc_ch: { type: 'string', label: 'Description (CH)',
+
+    },
+
+    progresstypes: { type: 'int', label: 'Progress Types',
 
     },
 

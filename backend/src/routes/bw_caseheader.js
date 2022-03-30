@@ -24,68 +24,24 @@ const router = express.Router();
  *          relatedcases:
  *            type: string
  *            default: relatedcases
- *          timebar:
- *            type: string
- *            default: timebar
- *          introducers:
- *            type: string
- *            default: introducers
  *          yearofcreation:
  *            type: string
  *            default: yearofcreation
  *          caseno:
  *            type: string
  *            default: caseno
- *          handlers:
- *            type: string
- *            default: handlers
- *          supervisors:
- *            type: string
- *            default: supervisors
- *          staffs:
- *            type: string
- *            default: staffs
- *          dla:
- *            type: string
- *            default: dla
- *          moneylaundrycompliance:
- *            type: string
- *            default: moneylaundrycompliance
- *          status:
- *            type: string
- *            default: status
  *          remarks:
  *            type: string
  *            default: remarks
  *          followuptasks:
  *            type: string
  *            default: followuptasks
- *          createby:
- *            type: string
- *            default: createby
- *          updateby:
- *            type: string
- *            default: updateby
 
- *          conflictcheck:
- *            type: integer
- *            format: int64
- *          clientcheck:
- *            type: integer
- *            format: int64
- *          caseprogress:
- *            type: integer
- *            format: int64
- *          workaccident:
- *            type: integer
- *            format: int64
- *          liabilityadmitted:
- *            type: integer
- *            format: int64
- *          approvalstatus:
- *            type: integer
- *            format: int64
-
+ *          
+ *          
+ *          
+ *          
+ *          
  */
 
 /**
