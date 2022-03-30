@@ -14,26 +14,6 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/file');
 
-const handlersRoutes = require('./routes/handlers');
-
-const introducersRoutes = require('./routes/introducers');
-
-const letterheadingRoutes = require('./routes/letterheading');
-
-const officesRoutes = require('./routes/offices');
-
-const progressRoutes = require('./routes/progress');
-
-const refnofilesseqRoutes = require('./routes/refnofilesseq');
-
-const rolesRoutes = require('./routes/roles');
-
-const staffsRoutes = require('./routes/staffs');
-
-const supervisorsRoutes = require('./routes/supervisors');
-
-const usersrolesRoutes = require('./routes/usersroles');
-
 const bw_casefilesRoutes = require('./routes/bw_casefiles');
 
 const bw_filedocsRoutes = require('./routes/bw_filedocs');
@@ -50,7 +30,27 @@ const bw_casetypesRoutes = require('./routes/bw_casetypes');
 
 const bw_categoryRoutes = require('./routes/bw_category');
 
-const bw_caseheaderreferencesRoutes = require('./routes/bw_caseheaderreferences');
+const bw_caseheaderRoutes = require('./routes/bw_caseheader');
+
+const bw_handlersRoutes = require('./routes/bw_handlers');
+
+const bw_introducersRoutes = require('./routes/bw_introducers');
+
+const bw_letterheadingRoutes = require('./routes/bw_letterheading');
+
+const bw_officesRoutes = require('./routes/bw_offices');
+
+const bw_progressRoutes = require('./routes/bw_progress');
+
+const bw_refnofilesseqRoutes = require('./routes/bw_refnofilesseq');
+
+const bw_rolesRoutes = require('./routes/bw_roles');
+
+const bw_staffsRoutes = require('./routes/bw_staffs');
+
+const bw_supervisorsRoutes = require('./routes/bw_supervisors');
+
+const bw_usersrolesRoutes = require('./routes/bw_usersroles');
 
 const usersRoutes = require('./routes/users');
 
@@ -103,26 +103,6 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/file', fileRoutes);
 
-app.use('/api/handlers', passport.authenticate('jwt', {session: false}), handlersRoutes);
-
-app.use('/api/introducers', passport.authenticate('jwt', {session: false}), introducersRoutes);
-
-app.use('/api/letterheading', passport.authenticate('jwt', {session: false}), letterheadingRoutes);
-
-app.use('/api/offices', passport.authenticate('jwt', {session: false}), officesRoutes);
-
-app.use('/api/progress', passport.authenticate('jwt', {session: false}), progressRoutes);
-
-app.use('/api/refnofilesseq', passport.authenticate('jwt', {session: false}), refnofilesseqRoutes);
-
-app.use('/api/roles', passport.authenticate('jwt', {session: false}), rolesRoutes);
-
-app.use('/api/staffs', passport.authenticate('jwt', {session: false}), staffsRoutes);
-
-app.use('/api/supervisors', passport.authenticate('jwt', {session: false}), supervisorsRoutes);
-
-app.use('/api/usersroles', passport.authenticate('jwt', {session: false}), usersrolesRoutes);
-
 app.use('/api/bw_casefiles', passport.authenticate('jwt', {session: false}), bw_casefilesRoutes);
 
 app.use('/api/bw_filedocs', passport.authenticate('jwt', {session: false}), bw_filedocsRoutes);
@@ -139,7 +119,27 @@ app.use('/api/bw_casetypes', passport.authenticate('jwt', {session: false}), bw_
 
 app.use('/api/bw_category', passport.authenticate('jwt', {session: false}), bw_categoryRoutes);
 
-app.use('/api/bw_caseheaderreferences', passport.authenticate('jwt', {session: false}), bw_caseheaderreferencesRoutes);
+app.use('/api/bw_caseheader', passport.authenticate('jwt', {session: false}), bw_caseheaderRoutes);
+
+app.use('/api/bw_handlers', passport.authenticate('jwt', {session: false}), bw_handlersRoutes);
+
+app.use('/api/bw_introducers', passport.authenticate('jwt', {session: false}), bw_introducersRoutes);
+
+app.use('/api/bw_letterheading', passport.authenticate('jwt', {session: false}), bw_letterheadingRoutes);
+
+app.use('/api/bw_offices', passport.authenticate('jwt', {session: false}), bw_officesRoutes);
+
+app.use('/api/bw_progress', passport.authenticate('jwt', {session: false}), bw_progressRoutes);
+
+app.use('/api/bw_refnofilesseq', passport.authenticate('jwt', {session: false}), bw_refnofilesseqRoutes);
+
+app.use('/api/bw_roles', passport.authenticate('jwt', {session: false}), bw_rolesRoutes);
+
+app.use('/api/bw_staffs', passport.authenticate('jwt', {session: false}), bw_staffsRoutes);
+
+app.use('/api/bw_supervisors', passport.authenticate('jwt', {session: false}), bw_supervisorsRoutes);
+
+app.use('/api/bw_usersroles', passport.authenticate('jwt', {session: false}), bw_usersrolesRoutes);
 
 app.use('/api/users', passport.authenticate('jwt', {session: false}), usersRoutes);
 

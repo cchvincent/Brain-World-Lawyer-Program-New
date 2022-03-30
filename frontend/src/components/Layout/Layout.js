@@ -32,46 +32,6 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 // context
 import { useLayoutState } from '../../context/LayoutContext'
 
-import HandlersFormPage from 'pages/CRUD/Handlers/form/HandlersFormPage';
-import HandlersTablePage from 'pages/CRUD/Handlers/table/HandlersTablePage';
-import HandlersViewPage from 'pages/CRUD/Handlers/page/HandlersViewPage';
-
-import IntroducersFormPage from 'pages/CRUD/Introducers/form/IntroducersFormPage';
-import IntroducersTablePage from 'pages/CRUD/Introducers/table/IntroducersTablePage';
-import IntroducersViewPage from 'pages/CRUD/Introducers/page/IntroducersViewPage';
-
-import LetterheadingFormPage from 'pages/CRUD/Letterheading/form/LetterheadingFormPage';
-import LetterheadingTablePage from 'pages/CRUD/Letterheading/table/LetterheadingTablePage';
-import LetterheadingViewPage from 'pages/CRUD/Letterheading/page/LetterheadingViewPage';
-
-import OfficesFormPage from 'pages/CRUD/Offices/form/OfficesFormPage';
-import OfficesTablePage from 'pages/CRUD/Offices/table/OfficesTablePage';
-import OfficesViewPage from 'pages/CRUD/Offices/page/OfficesViewPage';
-
-import ProgressFormPage from 'pages/CRUD/Progress/form/ProgressFormPage';
-import ProgressTablePage from 'pages/CRUD/Progress/table/ProgressTablePage';
-import ProgressViewPage from 'pages/CRUD/Progress/page/ProgressViewPage';
-
-import RefnofilesseqFormPage from 'pages/CRUD/Refnofilesseq/form/RefnofilesseqFormPage';
-import RefnofilesseqTablePage from 'pages/CRUD/Refnofilesseq/table/RefnofilesseqTablePage';
-import RefnofilesseqViewPage from 'pages/CRUD/Refnofilesseq/page/RefnofilesseqViewPage';
-
-import RolesFormPage from 'pages/CRUD/Roles/form/RolesFormPage';
-import RolesTablePage from 'pages/CRUD/Roles/table/RolesTablePage';
-import RolesViewPage from 'pages/CRUD/Roles/page/RolesViewPage';
-
-import StaffsFormPage from 'pages/CRUD/Staffs/form/StaffsFormPage';
-import StaffsTablePage from 'pages/CRUD/Staffs/table/StaffsTablePage';
-import StaffsViewPage from 'pages/CRUD/Staffs/page/StaffsViewPage';
-
-import SupervisorsFormPage from 'pages/CRUD/Supervisors/form/SupervisorsFormPage';
-import SupervisorsTablePage from 'pages/CRUD/Supervisors/table/SupervisorsTablePage';
-import SupervisorsViewPage from 'pages/CRUD/Supervisors/page/SupervisorsViewPage';
-
-import UsersrolesFormPage from 'pages/CRUD/Usersroles/form/UsersrolesFormPage';
-import UsersrolesTablePage from 'pages/CRUD/Usersroles/table/UsersrolesTablePage';
-import UsersrolesViewPage from 'pages/CRUD/Usersroles/page/UsersrolesViewPage';
-
 import Bw_casefilesFormPage from 'pages/CRUD/Bw_casefiles/form/Bw_casefilesFormPage';
 import Bw_casefilesTablePage from 'pages/CRUD/Bw_casefiles/table/Bw_casefilesTablePage';
 import Bw_casefilesViewPage from 'pages/CRUD/Bw_casefiles/page/Bw_casefilesViewPage';
@@ -104,9 +64,49 @@ import Bw_categoryFormPage from 'pages/CRUD/Bw_category/form/Bw_categoryFormPage
 import Bw_categoryTablePage from 'pages/CRUD/Bw_category/table/Bw_categoryTablePage';
 import Bw_categoryViewPage from 'pages/CRUD/Bw_category/page/Bw_categoryViewPage';
 
-import Bw_caseheaderreferencesFormPage from 'pages/CRUD/Bw_caseheaderreferences/form/Bw_caseheaderreferencesFormPage';
-import Bw_caseheaderreferencesTablePage from 'pages/CRUD/Bw_caseheaderreferences/table/Bw_caseheaderreferencesTablePage';
-import Bw_caseheaderreferencesViewPage from 'pages/CRUD/Bw_caseheaderreferences/page/Bw_caseheaderreferencesViewPage';
+import Bw_caseheaderFormPage from 'pages/CRUD/Bw_caseheader/form/Bw_caseheaderFormPage';
+import Bw_caseheaderTablePage from 'pages/CRUD/Bw_caseheader/table/Bw_caseheaderTablePage';
+import Bw_caseheaderViewPage from 'pages/CRUD/Bw_caseheader/page/Bw_caseheaderViewPage';
+
+import Bw_handlersFormPage from 'pages/CRUD/Bw_handlers/form/Bw_handlersFormPage';
+import Bw_handlersTablePage from 'pages/CRUD/Bw_handlers/table/Bw_handlersTablePage';
+import Bw_handlersViewPage from 'pages/CRUD/Bw_handlers/page/Bw_handlersViewPage';
+
+import Bw_introducersFormPage from 'pages/CRUD/Bw_introducers/form/Bw_introducersFormPage';
+import Bw_introducersTablePage from 'pages/CRUD/Bw_introducers/table/Bw_introducersTablePage';
+import Bw_introducersViewPage from 'pages/CRUD/Bw_introducers/page/Bw_introducersViewPage';
+
+import Bw_letterheadingFormPage from 'pages/CRUD/Bw_letterheading/form/Bw_letterheadingFormPage';
+import Bw_letterheadingTablePage from 'pages/CRUD/Bw_letterheading/table/Bw_letterheadingTablePage';
+import Bw_letterheadingViewPage from 'pages/CRUD/Bw_letterheading/page/Bw_letterheadingViewPage';
+
+import Bw_officesFormPage from 'pages/CRUD/Bw_offices/form/Bw_officesFormPage';
+import Bw_officesTablePage from 'pages/CRUD/Bw_offices/table/Bw_officesTablePage';
+import Bw_officesViewPage from 'pages/CRUD/Bw_offices/page/Bw_officesViewPage';
+
+import Bw_progressFormPage from 'pages/CRUD/Bw_progress/form/Bw_progressFormPage';
+import Bw_progressTablePage from 'pages/CRUD/Bw_progress/table/Bw_progressTablePage';
+import Bw_progressViewPage from 'pages/CRUD/Bw_progress/page/Bw_progressViewPage';
+
+import Bw_refnofilesseqFormPage from 'pages/CRUD/Bw_refnofilesseq/form/Bw_refnofilesseqFormPage';
+import Bw_refnofilesseqTablePage from 'pages/CRUD/Bw_refnofilesseq/table/Bw_refnofilesseqTablePage';
+import Bw_refnofilesseqViewPage from 'pages/CRUD/Bw_refnofilesseq/page/Bw_refnofilesseqViewPage';
+
+import Bw_rolesFormPage from 'pages/CRUD/Bw_roles/form/Bw_rolesFormPage';
+import Bw_rolesTablePage from 'pages/CRUD/Bw_roles/table/Bw_rolesTablePage';
+import Bw_rolesViewPage from 'pages/CRUD/Bw_roles/page/Bw_rolesViewPage';
+
+import Bw_staffsFormPage from 'pages/CRUD/Bw_staffs/form/Bw_staffsFormPage';
+import Bw_staffsTablePage from 'pages/CRUD/Bw_staffs/table/Bw_staffsTablePage';
+import Bw_staffsViewPage from 'pages/CRUD/Bw_staffs/page/Bw_staffsViewPage';
+
+import Bw_supervisorsFormPage from 'pages/CRUD/Bw_supervisors/form/Bw_supervisorsFormPage';
+import Bw_supervisorsTablePage from 'pages/CRUD/Bw_supervisors/table/Bw_supervisorsTablePage';
+import Bw_supervisorsViewPage from 'pages/CRUD/Bw_supervisors/page/Bw_supervisorsViewPage';
+
+import Bw_usersrolesFormPage from 'pages/CRUD/Bw_usersroles/form/Bw_usersrolesFormPage';
+import Bw_usersrolesTablePage from 'pages/CRUD/Bw_usersroles/table/Bw_usersrolesTablePage';
+import Bw_usersrolesViewPage from 'pages/CRUD/Bw_usersroles/page/Bw_usersrolesViewPage';
 
 import UsersFormPage from 'pages/CRUD/Users/form/UsersFormPage';
 import UsersTablePage from 'pages/CRUD/Users/table/UsersTablePage';
@@ -140,56 +140,6 @@ function Layout(props) {
 
                     <Route path="/admin/dashboard" component={Dashboard} />
                     <Route path="/admin/user/edit" component={EditUser} />
-
-                    <Route path={"/admin/handlers"} exact component={HandlersTablePage} />
-                    <Route path={"/admin/handlers/new"} exact component={HandlersFormPage} />
-                    <Route path={"/admin/handlers/:id/edit"} exact component={HandlersFormPage} />
-                    <Route path={"/admin/handlers/:id"} exact component={HandlersViewPage} />
-
-                    <Route path={"/admin/introducers"} exact component={IntroducersTablePage} />
-                    <Route path={"/admin/introducers/new"} exact component={IntroducersFormPage} />
-                    <Route path={"/admin/introducers/:id/edit"} exact component={IntroducersFormPage} />
-                    <Route path={"/admin/introducers/:id"} exact component={IntroducersViewPage} />
-
-                    <Route path={"/admin/letterheading"} exact component={LetterheadingTablePage} />
-                    <Route path={"/admin/letterheading/new"} exact component={LetterheadingFormPage} />
-                    <Route path={"/admin/letterheading/:id/edit"} exact component={LetterheadingFormPage} />
-                    <Route path={"/admin/letterheading/:id"} exact component={LetterheadingViewPage} />
-
-                    <Route path={"/admin/offices"} exact component={OfficesTablePage} />
-                    <Route path={"/admin/offices/new"} exact component={OfficesFormPage} />
-                    <Route path={"/admin/offices/:id/edit"} exact component={OfficesFormPage} />
-                    <Route path={"/admin/offices/:id"} exact component={OfficesViewPage} />
-
-                    <Route path={"/admin/progress"} exact component={ProgressTablePage} />
-                    <Route path={"/admin/progress/new"} exact component={ProgressFormPage} />
-                    <Route path={"/admin/progress/:id/edit"} exact component={ProgressFormPage} />
-                    <Route path={"/admin/progress/:id"} exact component={ProgressViewPage} />
-
-                    <Route path={"/admin/refnofilesseq"} exact component={RefnofilesseqTablePage} />
-                    <Route path={"/admin/refnofilesseq/new"} exact component={RefnofilesseqFormPage} />
-                    <Route path={"/admin/refnofilesseq/:id/edit"} exact component={RefnofilesseqFormPage} />
-                    <Route path={"/admin/refnofilesseq/:id"} exact component={RefnofilesseqViewPage} />
-
-                    <Route path={"/admin/roles"} exact component={RolesTablePage} />
-                    <Route path={"/admin/roles/new"} exact component={RolesFormPage} />
-                    <Route path={"/admin/roles/:id/edit"} exact component={RolesFormPage} />
-                    <Route path={"/admin/roles/:id"} exact component={RolesViewPage} />
-
-                    <Route path={"/admin/staffs"} exact component={StaffsTablePage} />
-                    <Route path={"/admin/staffs/new"} exact component={StaffsFormPage} />
-                    <Route path={"/admin/staffs/:id/edit"} exact component={StaffsFormPage} />
-                    <Route path={"/admin/staffs/:id"} exact component={StaffsViewPage} />
-
-                    <Route path={"/admin/supervisors"} exact component={SupervisorsTablePage} />
-                    <Route path={"/admin/supervisors/new"} exact component={SupervisorsFormPage} />
-                    <Route path={"/admin/supervisors/:id/edit"} exact component={SupervisorsFormPage} />
-                    <Route path={"/admin/supervisors/:id"} exact component={SupervisorsViewPage} />
-
-                    <Route path={"/admin/usersroles"} exact component={UsersrolesTablePage} />
-                    <Route path={"/admin/usersroles/new"} exact component={UsersrolesFormPage} />
-                    <Route path={"/admin/usersroles/:id/edit"} exact component={UsersrolesFormPage} />
-                    <Route path={"/admin/usersroles/:id"} exact component={UsersrolesViewPage} />
 
                     <Route path={"/admin/bw_casefiles"} exact component={Bw_casefilesTablePage} />
                     <Route path={"/admin/bw_casefiles/new"} exact component={Bw_casefilesFormPage} />
@@ -231,10 +181,60 @@ function Layout(props) {
                     <Route path={"/admin/bw_category/:id/edit"} exact component={Bw_categoryFormPage} />
                     <Route path={"/admin/bw_category/:id"} exact component={Bw_categoryViewPage} />
 
-                    <Route path={"/admin/bw_caseheaderreferences"} exact component={Bw_caseheaderreferencesTablePage} />
-                    <Route path={"/admin/bw_caseheaderreferences/new"} exact component={Bw_caseheaderreferencesFormPage} />
-                    <Route path={"/admin/bw_caseheaderreferences/:id/edit"} exact component={Bw_caseheaderreferencesFormPage} />
-                    <Route path={"/admin/bw_caseheaderreferences/:id"} exact component={Bw_caseheaderreferencesViewPage} />
+                    <Route path={"/admin/bw_caseheader"} exact component={Bw_caseheaderTablePage} />
+                    <Route path={"/admin/bw_caseheader/new"} exact component={Bw_caseheaderFormPage} />
+                    <Route path={"/admin/bw_caseheader/:id/edit"} exact component={Bw_caseheaderFormPage} />
+                    <Route path={"/admin/bw_caseheader/:id"} exact component={Bw_caseheaderViewPage} />
+
+                    <Route path={"/admin/bw_handlers"} exact component={Bw_handlersTablePage} />
+                    <Route path={"/admin/bw_handlers/new"} exact component={Bw_handlersFormPage} />
+                    <Route path={"/admin/bw_handlers/:id/edit"} exact component={Bw_handlersFormPage} />
+                    <Route path={"/admin/bw_handlers/:id"} exact component={Bw_handlersViewPage} />
+
+                    <Route path={"/admin/bw_introducers"} exact component={Bw_introducersTablePage} />
+                    <Route path={"/admin/bw_introducers/new"} exact component={Bw_introducersFormPage} />
+                    <Route path={"/admin/bw_introducers/:id/edit"} exact component={Bw_introducersFormPage} />
+                    <Route path={"/admin/bw_introducers/:id"} exact component={Bw_introducersViewPage} />
+
+                    <Route path={"/admin/bw_letterheading"} exact component={Bw_letterheadingTablePage} />
+                    <Route path={"/admin/bw_letterheading/new"} exact component={Bw_letterheadingFormPage} />
+                    <Route path={"/admin/bw_letterheading/:id/edit"} exact component={Bw_letterheadingFormPage} />
+                    <Route path={"/admin/bw_letterheading/:id"} exact component={Bw_letterheadingViewPage} />
+
+                    <Route path={"/admin/bw_offices"} exact component={Bw_officesTablePage} />
+                    <Route path={"/admin/bw_offices/new"} exact component={Bw_officesFormPage} />
+                    <Route path={"/admin/bw_offices/:id/edit"} exact component={Bw_officesFormPage} />
+                    <Route path={"/admin/bw_offices/:id"} exact component={Bw_officesViewPage} />
+
+                    <Route path={"/admin/bw_progress"} exact component={Bw_progressTablePage} />
+                    <Route path={"/admin/bw_progress/new"} exact component={Bw_progressFormPage} />
+                    <Route path={"/admin/bw_progress/:id/edit"} exact component={Bw_progressFormPage} />
+                    <Route path={"/admin/bw_progress/:id"} exact component={Bw_progressViewPage} />
+
+                    <Route path={"/admin/bw_refnofilesseq"} exact component={Bw_refnofilesseqTablePage} />
+                    <Route path={"/admin/bw_refnofilesseq/new"} exact component={Bw_refnofilesseqFormPage} />
+                    <Route path={"/admin/bw_refnofilesseq/:id/edit"} exact component={Bw_refnofilesseqFormPage} />
+                    <Route path={"/admin/bw_refnofilesseq/:id"} exact component={Bw_refnofilesseqViewPage} />
+
+                    <Route path={"/admin/bw_roles"} exact component={Bw_rolesTablePage} />
+                    <Route path={"/admin/bw_roles/new"} exact component={Bw_rolesFormPage} />
+                    <Route path={"/admin/bw_roles/:id/edit"} exact component={Bw_rolesFormPage} />
+                    <Route path={"/admin/bw_roles/:id"} exact component={Bw_rolesViewPage} />
+
+                    <Route path={"/admin/bw_staffs"} exact component={Bw_staffsTablePage} />
+                    <Route path={"/admin/bw_staffs/new"} exact component={Bw_staffsFormPage} />
+                    <Route path={"/admin/bw_staffs/:id/edit"} exact component={Bw_staffsFormPage} />
+                    <Route path={"/admin/bw_staffs/:id"} exact component={Bw_staffsViewPage} />
+
+                    <Route path={"/admin/bw_supervisors"} exact component={Bw_supervisorsTablePage} />
+                    <Route path={"/admin/bw_supervisors/new"} exact component={Bw_supervisorsFormPage} />
+                    <Route path={"/admin/bw_supervisors/:id/edit"} exact component={Bw_supervisorsFormPage} />
+                    <Route path={"/admin/bw_supervisors/:id"} exact component={Bw_supervisorsViewPage} />
+
+                    <Route path={"/admin/bw_usersroles"} exact component={Bw_usersrolesTablePage} />
+                    <Route path={"/admin/bw_usersroles/new"} exact component={Bw_usersrolesFormPage} />
+                    <Route path={"/admin/bw_usersroles/:id/edit"} exact component={Bw_usersrolesFormPage} />
+                    <Route path={"/admin/bw_usersroles/:id"} exact component={Bw_usersrolesViewPage} />
 
                     <Route path={"/admin/users"} exact component={UsersTablePage} />
                     <Route path={"/admin/users/new"} exact component={UsersFormPage} />
