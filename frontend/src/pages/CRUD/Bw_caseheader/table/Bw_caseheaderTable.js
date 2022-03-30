@@ -2,9 +2,21 @@
 import * as dataFormat from 'pages/CRUD/Bw_caseheader/table/Bw_caseheaderDataFormatters';
 
 // eslint-disable-next-line
-import * as bw_casetypesDataFormat from 'pages/CRUD/Bw_casetypes/table/Bw_casetypesDataFormatters';
+import * as bw_introducersDataFormat from 'pages/CRUD/Bw_introducers/table/Bw_introducersDataFormatters';
+// eslint-disable-next-line
+import * as bw_handlersDataFormat from 'pages/CRUD/Bw_handlers/table/Bw_handlersDataFormatters';
+// eslint-disable-next-line
+import * as bw_supervisorsDataFormat from 'pages/CRUD/Bw_supervisors/table/Bw_supervisorsDataFormatters';
+// eslint-disable-next-line
+import * as bw_staffsDataFormat from 'pages/CRUD/Bw_staffs/table/Bw_staffsDataFormatters';
 // eslint-disable-next-line
 import * as bw_progressDataFormat from 'pages/CRUD/Bw_progress/table/Bw_progressDataFormatters';
+// eslint-disable-next-line
+import * as bw_casestatusDataFormat from 'pages/CRUD/Bw_casestatus/table/Bw_casestatusDataFormatters';
+// eslint-disable-next-line
+import * as usersDataFormat from 'pages/CRUD/Users/table/UsersDataFormatters';
+// eslint-disable-next-line
+import * as bw_casetypesDataFormat from 'pages/CRUD/Bw_casetypes/table/Bw_casetypesDataFormatters';
 // eslint-disable-next-line
 import * as bw_officesDataFormat from 'pages/CRUD/Bw_offices/table/Bw_officesDataFormatters';
 // eslint-disable-next-line
@@ -49,10 +61,9 @@ const { SearchBar } = Search;
 
 const Bw_caseheaderTable = () => {
   const [filters, setFilters] = React.useState([
-    {label: 'Ref No', title: 'refno'},{label: 'Temp Ref No', title: 'temprefno'},{label: 'Related Cases', title: 'relatedcases'},{label: 'Time Bar', title: 'timebar'},{label: 'Introducers', title: 'introducers'},{label: 'Year Of Creation', title: 'yearofcreation'},{label: 'Case No', title: 'caseno'},{label: 'Handlers', title: 'handlers'},{label: 'Supervisors', title: 'supervisors'},{label: 'Staffs', title: 'staffs'},{label: 'DLA', title: 'dla'},{label: 'Money Laundry Compliance', title: 'moneylaundrycompliance'},{label: 'Status', title: 'status'},{label: 'Remarks', title: 'remarks'},{label: 'Follow Up Tasks', title: 'followuptasks'},{label: 'Create By', title: 'createby'},{label: 'Update By', title: 'updateby'},
-    {label: 'Conflict Check', title: 'conflictcheck', number: 'true'},{label: 'Client Check', title: 'clientcheck', number: 'true'},{label: 'Progress', title: 'caseprogress', number: 'true'},{label: 'Work Accident', title: 'workaccident', number: 'true'},{label: 'Liability Admitted', title: 'liabilityadmitted', number: 'true'},{label: 'Approval Status', title: 'approvalstatus', number: 'true'},
+    {label: 'Ref No', title: 'refno'},{label: 'Temp Ref No', title: 'temprefno'},{label: 'Related Cases', title: 'relatedcases'},{label: 'Year Of Creation', title: 'yearofcreation'},{label: 'Case No', title: 'caseno'},{label: 'Remarks', title: 'remarks'},{label: 'Follow Up Tasks', title: 'followuptasks'},
 
-    {label: 'Case Types ID', title: 'casetypesid'},{label: 'Progress ID', title: 'progressid'},{label: 'Case File Location ID', title: 'casefilelocationid'},{label: 'Client ID', title: 'clientid'},
+    {label: 'Case Progress', title: 'caseprogress'},{label: 'Status', title: 'status'},{label: 'Create By', title: 'createby'},{label: 'Update By', title: 'updateby'},{label: 'Case Types ID', title: 'casetypesid'},{label: 'Progress ID', title: 'progressid'},{label: 'Case File Location ID', title: 'casefilelocationid'},{label: 'Client ID', title: 'clientid'},
   ]);
   const [filterItems, setFilterItems] = React.useState([]);
   const [currPage, setCurrPage] = React.useState(1);
@@ -104,6 +115,122 @@ const Bw_caseheaderTable = () => {
 
         const columns = [
 
+{ dataField: "timebar",
+sort: true,
+
+text: "Time Bar"
+},
+
+{ dataField: "introducers",
+sort: true,
+
+  formatter: bw_introducersDataFormat.listFormatter,
+
+text: "Introducers"
+},
+
+{ dataField: "handlers",
+sort: true,
+
+  formatter: bw_handlersDataFormat.listFormatter,
+
+text: "Handlers"
+},
+
+{ dataField: "supervisors",
+sort: true,
+
+  formatter: bw_supervisorsDataFormat.listFormatter,
+
+text: "Supervisors"
+},
+
+{ dataField: "staffs",
+sort: true,
+
+  formatter: bw_staffsDataFormat.listFormatter,
+
+text: "Staffs"
+},
+
+{ dataField: "clientcheck",
+sort: true,
+
+text: "Client Check"
+},
+
+{ dataField: "moneylaundrycompliance",
+sort: true,
+
+text: "Money Laundry Compliance"
+},
+
+{ dataField: "caseprogress",
+sort: true,
+
+  formatter: bw_progressDataFormat.listFormatter,
+
+text: "Case Progress"
+},
+
+{ dataField: "status",
+sort: true,
+
+  formatter: bw_casestatusDataFormat.listFormatter,
+
+text: "Status"
+},
+
+{ dataField: "workaccident",
+sort: true,
+
+text: "Work Accident"
+},
+
+{ dataField: "approvalstatus",
+sort: true,
+
+text: "Approval Status"
+},
+
+{ dataField: "dla",
+sort: true,
+
+text: "DLA"
+},
+
+{ dataField: "createby",
+sort: true,
+
+  formatter: usersDataFormat.listFormatter,
+
+text: "Create By"
+},
+
+{ dataField: "updateby",
+sort: true,
+
+  formatter: usersDataFormat.listFormatter,
+
+text: "Update By"
+},
+
+{ dataField: "createdate",
+sort: true,
+
+  formatter: dataFormat.dateTimeFormatter,
+
+text: "Create Date"
+},
+
+{ dataField: "updatedate",
+sort: true,
+
+  formatter: dataFormat.dateTimeFormatter,
+
+text: "Update Date"
+},
+
 { dataField: "casetypesid",
 sort: true,
 
@@ -136,24 +263,12 @@ sort: true,
 text: "Date Of Accident"
 },
 
-{ dataField: "timebar",
-sort: true,
-
-text: "Time Bar"
-},
-
 { dataField: "progressid",
 sort: true,
 
   formatter: bw_progressDataFormat.listFormatter,
 
 text: "Progress ID"
-},
-
-{ dataField: "introducers",
-sort: true,
-
-text: "Introducers"
 },
 
 { dataField: "yearofcreation",
@@ -166,30 +281,6 @@ text: "Year Of Creation"
 sort: true,
 
 text: "Case No"
-},
-
-{ dataField: "handlers",
-sort: true,
-
-text: "Handlers"
-},
-
-{ dataField: "supervisors",
-sort: true,
-
-text: "Supervisors"
-},
-
-{ dataField: "staffs",
-sort: true,
-
-text: "Staffs"
-},
-
-{ dataField: "dla",
-sort: true,
-
-text: "DLA"
 },
 
 { dataField: "casefilelocationid",
@@ -208,48 +299,6 @@ sort: true,
 text: "Client ID"
 },
 
-{ dataField: "conflictcheck",
-sort: true,
-
-text: "Conflict Check"
-},
-
-{ dataField: "clientcheck",
-sort: true,
-
-text: "Client Check"
-},
-
-{ dataField: "moneylaundrycompliance",
-sort: true,
-
-text: "Money Laundry Compliance"
-},
-
-{ dataField: "status",
-sort: true,
-
-text: "Status"
-},
-
-{ dataField: "caseprogress",
-sort: true,
-
-text: "Progress"
-},
-
-{ dataField: "workaccident",
-sort: true,
-
-text: "Work Accident"
-},
-
-{ dataField: "liabilityadmitted",
-sort: true,
-
-text: "Liability Admitted"
-},
-
 { dataField: "remarks",
 sort: true,
 
@@ -260,40 +309,6 @@ text: "Remarks"
 sort: true,
 
 text: "Follow Up Tasks"
-},
-
-{ dataField: "approvalstatus",
-sort: true,
-
-text: "Approval Status"
-},
-
-{ dataField: "createdate",
-sort: true,
-
-  formatter: dataFormat.dateTimeFormatter,
-
-text: "Create Date"
-},
-
-{ dataField: "createby",
-sort: true,
-
-text: "Create By"
-},
-
-{ dataField: "updatedate",
-sort: true,
-
-  formatter: dataFormat.dateTimeFormatter,
-
-text: "Update Date"
-},
-
-{ dataField: "updateby",
-sort: true,
-
-text: "Update By"
 },
 
         {

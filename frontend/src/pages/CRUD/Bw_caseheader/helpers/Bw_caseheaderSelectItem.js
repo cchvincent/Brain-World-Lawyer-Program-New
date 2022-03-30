@@ -21,7 +21,7 @@ const Bw_caseheaderSelectItem = (props) => {
       }
 
       const value = originalValue.id;
-      let label = originalValue.label ? originalValue.label : originalValue.casetypesid;
+      let label = originalValue.label ? originalValue.label : originalValue.timebar;
 
       return {
         key: value,

@@ -27,9 +27,21 @@ import PreparedValues from 'components/FormItems/preparedValues';
 import FormValidations from 'components/FormItems/formValidations';
 import Widget from 'components/Widget';
 
-import Bw_casetypesSelectItem from 'pages/CRUD/Bw_casetypes/helpers/Bw_casetypesSelectItem';
+import Bw_introducersSelectItem from 'pages/CRUD/Bw_introducers/helpers/Bw_introducersSelectItem';
+
+import Bw_handlersSelectItem from 'pages/CRUD/Bw_handlers/helpers/Bw_handlersSelectItem';
+
+import Bw_supervisorsSelectItem from 'pages/CRUD/Bw_supervisors/helpers/Bw_supervisorsSelectItem';
+
+import Bw_staffsSelectItem from 'pages/CRUD/Bw_staffs/helpers/Bw_staffsSelectItem';
 
 import Bw_progressSelectItem from 'pages/CRUD/Bw_progress/helpers/Bw_progressSelectItem';
+
+import Bw_casestatusSelectItem from 'pages/CRUD/Bw_casestatus/helpers/Bw_casestatusSelectItem';
+
+import UsersSelectItem from 'pages/CRUD/Users/helpers/UsersSelectItem';
+
+import Bw_casetypesSelectItem from 'pages/CRUD/Bw_casetypes/helpers/Bw_casetypesSelectItem';
 
 import Bw_officesSelectItem from 'pages/CRUD/Bw_offices/helpers/Bw_officesSelectItem';
 
@@ -81,6 +93,91 @@ const Bw_caseheaderForm = (props) => {
   {(form) => (
   <form onSubmit={form.handleSubmit}>
 
+      <DatePickerFormItem
+              name={'timebar'}
+      schema={bw_caseheaderFields}
+      />
+
+      <Bw_introducersSelectItem
+      name={'introducers'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      mode="multiple"
+      form={form}
+      />
+
+      <Bw_handlersSelectItem
+      name={'handlers'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      mode="multiple"
+      form={form}
+      />
+
+      <Bw_supervisorsSelectItem
+      name={'supervisors'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      mode="multiple"
+      form={form}
+      />
+
+      <Bw_staffsSelectItem
+      name={'staffs'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      mode="multiple"
+      form={form}
+      />
+
+      <RadioFormItem
+      name={'conflictcheck'}
+      schema={bw_caseheaderFields}
+      />
+
+      <Bw_progressSelectItem
+      name={'caseprogress'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      form={form}
+      />
+
+      <Bw_casestatusSelectItem
+      name={'status'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      form={form}
+      />
+
+      <RadioFormItem
+      name={'workaccident'}
+      schema={bw_caseheaderFields}
+      />
+
+      <RadioFormItem
+      name={'liabilityadmitted'}
+      schema={bw_caseheaderFields}
+      />
+
+      <RadioFormItem
+      name={'dla'}
+      schema={bw_caseheaderFields}
+      />
+
+      <UsersSelectItem
+      name={'createby'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      form={form}
+      />
+
+      <UsersSelectItem
+      name={'updateby'}
+      schema={bw_caseheaderFields}
+      showCreate={!modal}
+      form={form}
+      />
+
       <Bw_casetypesSelectItem
       name={'casetypesid'}
       schema={bw_caseheaderFields}
@@ -111,23 +208,11 @@ const Bw_caseheaderForm = (props) => {
       schema={bw_caseheaderFields}
       />
 
-      <InputFormItem
-              name={'timebar'}
-      schema={bw_caseheaderFields}
-
-      />
-
       <Bw_progressSelectItem
       name={'progressid'}
       schema={bw_caseheaderFields}
       showCreate={!modal}
       form={form}
-      />
-
-      <TextAreaFormItem
-              name={'introducers'}
-      schema={bw_caseheaderFields}
-
       />
 
       <InputFormItem
@@ -138,30 +223,6 @@ const Bw_caseheaderForm = (props) => {
 
       <InputFormItem
               name={'caseno'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputFormItem
-              name={'handlers'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputFormItem
-              name={'supervisors'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputFormItem
-              name={'staffs'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputFormItem
-              name={'dla'}
       schema={bw_caseheaderFields}
 
       />
@@ -180,43 +241,6 @@ const Bw_caseheaderForm = (props) => {
       form={form}
       />
 
-      <InputNumberFormItem
-              name={'conflictcheck'}
-      schema={bw_caseheaderFields}
-      />
-
-      <InputNumberFormItem
-              name={'clientcheck'}
-      schema={bw_caseheaderFields}
-      />
-
-      <InputFormItem
-              name={'moneylaundrycompliance'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputFormItem
-              name={'status'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputNumberFormItem
-              name={'caseprogress'}
-      schema={bw_caseheaderFields}
-      />
-
-      <InputNumberFormItem
-              name={'workaccident'}
-      schema={bw_caseheaderFields}
-      />
-
-      <InputNumberFormItem
-              name={'liabilityadmitted'}
-      schema={bw_caseheaderFields}
-      />
-
       <TextAreaFormItem
               name={'remarks'}
       schema={bw_caseheaderFields}
@@ -225,35 +249,6 @@ const Bw_caseheaderForm = (props) => {
 
       <TextAreaFormItem
               name={'followuptasks'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <InputNumberFormItem
-              name={'approvalstatus'}
-      schema={bw_caseheaderFields}
-      />
-
-      <DatePickerFormItem
-              name={'createdate'}
-      schema={bw_caseheaderFields}
-      showTimeInput
-      />
-
-      <InputFormItem
-              name={'createby'}
-      schema={bw_caseheaderFields}
-
-      />
-
-      <DatePickerFormItem
-              name={'updatedate'}
-      schema={bw_caseheaderFields}
-      showTimeInput
-      />
-
-      <InputFormItem
-              name={'updateby'}
       schema={bw_caseheaderFields}
 
       />

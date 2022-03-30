@@ -2,6 +2,134 @@
 const bw_caseheaderFields = {
 	id: { type: 'id', label: 'ID' },
 
+    timebar: { type: 'date', label: 'Time Bar',
+
+    },
+
+    introducers: { type: 'relation_many', label: 'Introducers',
+
+    },
+
+    handlers: { type: 'relation_many', label: 'Handlers',
+
+    },
+
+    supervisors: { type: 'relation_many', label: 'Supervisors',
+
+    },
+
+    staffs: { type: 'relation_many', label: 'Staffs',
+
+    },
+
+    conflictcheck: { type: 'enum', label: 'Conflict Check',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    clientcheck: { type: 'enum', label: 'Client Check',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    moneylaundrycompliance: { type: 'enum', label: 'Money Laundry Compliance',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    caseprogress: { type: 'relation_one', label: 'Case Progress',
+
+    },
+
+    status: { type: 'relation_one', label: 'Status',
+
+    },
+
+    workaccident: { type: 'enum', label: 'Work Accident',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    liabilityadmitted: { type: 'enum', label: 'Liability Admitted',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    approvalstatus: { type: 'enum', label: 'Approval Status',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    dla: { type: 'enum', label: 'DLA',
+
+    options: [
+
+    { value: 'Yes', label: 'Yes' },
+
+    { value: 'No', label: 'No' },
+
+]
+
+    },
+
+    createby: { type: 'relation_one', label: 'Create By',
+
+    },
+
+    updateby: { type: 'relation_one', label: 'Update By',
+
+    },
+
+    createdate: { type: 'datetime', label: 'Create Date',
+
+    },
+
+    updatedate: { type: 'datetime', label: 'Update Date',
+
+    },
+
     casetypesid: { type: 'relation_one', label: 'Case Types ID',
 
     },
@@ -22,15 +150,7 @@ const bw_caseheaderFields = {
 
     },
 
-    timebar: { type: 'string', label: 'Time Bar',
-
-    },
-
     progressid: { type: 'relation_one', label: 'Progress ID',
-
-    },
-
-    introducers: { type: 'string', label: 'Introducers',
 
     },
 
@@ -42,22 +162,6 @@ const bw_caseheaderFields = {
 
     },
 
-    handlers: { type: 'string', label: 'Handlers',
-
-    },
-
-    supervisors: { type: 'string', label: 'Supervisors',
-
-    },
-
-    staffs: { type: 'string', label: 'Staffs',
-
-    },
-
-    dla: { type: 'string', label: 'DLA',
-
-    },
-
     casefilelocationid: { type: 'relation_one', label: 'Case File Location ID',
 
     },
@@ -66,59 +170,11 @@ const bw_caseheaderFields = {
 
     },
 
-    conflictcheck: { type: 'int', label: 'Conflict Check',
-
-    },
-
-    clientcheck: { type: 'int', label: 'Client Check',
-
-    },
-
-    moneylaundrycompliance: { type: 'string', label: 'Money Laundry Compliance',
-
-    },
-
-    status: { type: 'string', label: 'Status',
-
-    },
-
-    caseprogress: { type: 'int', label: 'Progress',
-
-    },
-
-    workaccident: { type: 'int', label: 'Work Accident',
-
-    },
-
-    liabilityadmitted: { type: 'int', label: 'Liability Admitted',
-
-    },
-
     remarks: { type: 'string', label: 'Remarks',
 
     },
 
     followuptasks: { type: 'string', label: 'Follow Up Tasks',
-
-    },
-
-    approvalstatus: { type: 'int', label: 'Approval Status',
-
-    },
-
-    createdate: { type: 'datetime', label: 'Create Date',
-
-    },
-
-    createby: { type: 'string', label: 'Create By',
-
-    },
-
-    updatedate: { type: 'datetime', label: 'Update Date',
-
-    },
-
-    updateby: { type: 'string', label: 'Update By',
 
     },
 

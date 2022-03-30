@@ -14,6 +14,120 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true,
       },
 
+timebar: {
+        type: DataTypes.DATEONLY,
+
+        get: function() {
+          return this.getDataValue('timebar')
+            ? moment
+                .utc(this.getDataValue('timebar'))
+                .format('YYYY-MM-DD')
+            : null;
+        },
+
+      },
+
+conflictcheck: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+clientcheck: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+moneylaundrycompliance: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+workaccident: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+liabilityadmitted: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+approvalstatus: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+dla: {
+        type: DataTypes.ENUM,
+
+        values: [
+
+"Yes",
+
+"No"
+
+        ],
+
+      },
+
+createdate: {
+        type: DataTypes.DATE,
+
+      },
+
+updatedate: {
+        type: DataTypes.DATE,
+
+      },
+
 refno: {
         type: DataTypes.TEXT,
 
@@ -42,16 +156,6 @@ dateofaccident: {
 
       },
 
-timebar: {
-        type: DataTypes.TEXT,
-
-      },
-
-introducers: {
-        type: DataTypes.TEXT,
-
-      },
-
 yearofcreation: {
         type: DataTypes.TEXT,
 
@@ -62,92 +166,12 @@ caseno: {
 
       },
 
-handlers: {
-        type: DataTypes.TEXT,
-
-      },
-
-supervisors: {
-        type: DataTypes.TEXT,
-
-      },
-
-staffs: {
-        type: DataTypes.TEXT,
-
-      },
-
-dla: {
-        type: DataTypes.TEXT,
-
-      },
-
-conflictcheck: {
-        type: DataTypes.INTEGER,
-
-      },
-
-clientcheck: {
-        type: DataTypes.INTEGER,
-
-      },
-
-moneylaundrycompliance: {
-        type: DataTypes.TEXT,
-
-      },
-
-status: {
-        type: DataTypes.TEXT,
-
-      },
-
-caseprogress: {
-        type: DataTypes.INTEGER,
-
-      },
-
-workaccident: {
-        type: DataTypes.INTEGER,
-
-      },
-
-liabilityadmitted: {
-        type: DataTypes.INTEGER,
-
-      },
-
 remarks: {
         type: DataTypes.TEXT,
 
       },
 
 followuptasks: {
-        type: DataTypes.TEXT,
-
-      },
-
-approvalstatus: {
-        type: DataTypes.INTEGER,
-
-      },
-
-createdate: {
-        type: DataTypes.DATE,
-
-      },
-
-createby: {
-        type: DataTypes.TEXT,
-
-      },
-
-updatedate: {
-        type: DataTypes.DATE,
-
-      },
-
-updateby: {
         type: DataTypes.TEXT,
 
       },
@@ -166,6 +190,50 @@ updateby: {
   );
 
   bw_caseheader.associate = (db) => {
+
+    db.bw_caseheader.belongsToMany(db.bw_introducers, {
+      as: 'introducers',
+      constraints: false,
+      through: 'bw_caseheaderIntroducersBw_introducers',
+    });
+
+    db.bw_caseheader.belongsToMany(db.bw_handlers, {
+      as: 'handlers',
+      constraints: false,
+      through: 'bw_caseheaderHandlersBw_handlers',
+    });
+
+    db.bw_caseheader.belongsToMany(db.bw_supervisors, {
+      as: 'supervisors',
+      constraints: false,
+      through: 'bw_caseheaderSupervisorsBw_supervisors',
+    });
+
+    db.bw_caseheader.belongsToMany(db.bw_staffs, {
+      as: 'staffs',
+      constraints: false,
+      through: 'bw_caseheaderStaffsBw_staffs',
+    });
+
+    db.bw_caseheader.belongsTo(db.bw_progress, {
+      as: 'caseprogress',
+      constraints: false,
+    });
+
+    db.bw_caseheader.belongsTo(db.bw_casestatus, {
+      as: 'status',
+      constraints: false,
+    });
+
+    db.bw_caseheader.belongsTo(db.users, {
+      as: 'createby',
+      constraints: false,
+    });
+
+    db.bw_caseheader.belongsTo(db.users, {
+      as: 'updateby',
+      constraints: false,
+    });
 
     db.bw_caseheader.belongsTo(db.bw_casetypes, {
       as: 'casetypesid',

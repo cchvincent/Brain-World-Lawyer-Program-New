@@ -14,11 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true,
       },
 
-progresstypes: {
-        type: DataTypes.INTEGER,
-
-      },
-
 desc_en: {
         type: DataTypes.TEXT,
 
@@ -26,6 +21,11 @@ desc_en: {
 
 desc_ch: {
         type: DataTypes.TEXT,
+
+      },
+
+progresstypes: {
+        type: DataTypes.INTEGER,
 
       },
 

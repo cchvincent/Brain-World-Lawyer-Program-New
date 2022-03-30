@@ -94,12 +94,6 @@ const Bw_progressTable = () => {
 
         const columns = [
 
-{ dataField: "progresstypes",
-sort: true,
-
-text: "Progress Types"
-},
-
 { dataField: "desc_en",
 sort: true,
 
@@ -110,6 +104,12 @@ text: "Description (EN)"
 sort: true,
 
 text: "Description (CH)"
+},
+
+{ dataField: "progresstypes",
+sort: true,
+
+text: "Progress Types"
 },
 
 { dataField: "status",
