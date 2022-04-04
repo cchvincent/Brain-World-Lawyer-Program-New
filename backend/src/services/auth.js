@@ -3,7 +3,6 @@ const ValidationError = require('./notifications/errors/validation');
 const ForbiddenError = require('./notifications/errors/forbidden');
 const bcrypt = require('bcrypt');
 const EmailAddressVerificationEmail = require('./email/list/addressVerification');
-const InvitationEmail = require('./email/list/invitation');
 const PasswordResetEmail = require('./email/list/passwordReset');
 const EmailSender = require('./email');
 const config = require('../config');
